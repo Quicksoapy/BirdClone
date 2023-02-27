@@ -1,0 +1,24 @@
+@page "/Register"
+@model BirdClone.Pages.Register
+
+@code {
+    private class RegisterModel
+    {
+        public UInt32 Id { get; set; }
+        public string Username { get; set; } = "";
+        public string Password { get; set; } = "";
+    }
+    private RegisterModel _registerModel = new();
+
+    private void HandleSubmit()
+    {
+        Console.WriteLine("username: " + _registerModel.Username + ", Password: " + _registerModel.Password);
+     }
+}
+
+<EditForm model="@_registerModel" OnSubmit="@HandleSubmit">
+    <label>Username: </label><InputText @bind-Value="_registerModel.Username"/>
+    <label>Password: </label><InputText @bind-Value="_registerModel.Password"/>
+    <button type="submit">Submit</button>
+</EditForm>
+
