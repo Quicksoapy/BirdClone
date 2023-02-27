@@ -1,22 +1,12 @@
 @page "/Register"
-@model BirdClone.Pages.Register
+@using Microsoft.AspNetCore.Components
 
 @code {
-    private class RegisterModel
-    {
-        public UInt32 Id { get; set; }
-        public string Username { get; set; } = "";
-        public string Password { get; set; } = "";
-    }
-    private RegisterModel _registerModel = new();
 
-    private void HandleSubmit()
-    {
-        Console.WriteLine("username: " + _registerModel.Username + ", Password: " + _registerModel.Password);
-     }
+    private Register.RegisterModel _registerModel = new();
 }
 
-<EditForm model="@_registerModel" OnSubmit="@HandleSubmit">
+<EditForm model="@_registerModel" OnSubmit="@{ Register.HandleSubmit(_registerModel);}">
     <label>Username: </label><InputText @bind-Value="_registerModel.Username"/>
     <label>Password: </label><InputText @bind-Value="_registerModel.Password"/>
     <button type="submit">Submit</button>

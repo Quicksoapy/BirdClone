@@ -6,15 +6,22 @@
     <projectFile profileName="https">BirdClone/BirdClone.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml.cs" afterDir="false" />
+    <list default="true" id="67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/BirdClone/DbContext/AccountDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone/Models/RegisterModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/BirdClone.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/BirdClone.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/BirdClone.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/BirdClone.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/BirdClone.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/BirdClone.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/BirdClone.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/BirdClone.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,16 +40,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BirdClone: https">
     <configuration name="BirdClone: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BirdClone/BirdClone.csproj" />
@@ -104,6 +111,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677487676795</updated>
       <workItem from="1677487684084" duration="2494000" />
+      <workItem from="1677507767995" duration="1241000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1677487782844</created>
