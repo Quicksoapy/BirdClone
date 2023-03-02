@@ -15,9 +15,6 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-builder.Services.AddDbContext<CustomerDbContext>(options =>
-    options.UseInMemoryDatabase("name"));
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
