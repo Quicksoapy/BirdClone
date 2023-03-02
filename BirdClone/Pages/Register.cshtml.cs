@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -19,7 +21,9 @@ public class Register : PageModel
 
     public void OnPost()
     {
-        Console.WriteLine("username: " + RegisterModel.Username + ", Password: " + RegisterModel.Password);
+        
+        var globals = new Globals();
+        var hashedPassword = Globals.GetSha512(RegisterModel.Password);
     }
     public void OnGet()
     {
