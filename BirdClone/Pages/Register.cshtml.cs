@@ -1,5 +1,6 @@
 using System.Security.Cryptography;
 using System.Text;
+using BirdClone.postgres;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -21,9 +22,10 @@ public class Register : PageModel
 
     public void OnPost()
     {
+        var databaseHandling = new DatabaseHandling();
         
-        var globals = new Globals();
         var hashedPassword = Globals.GetSha512(RegisterModel.Password);
+        databaseHandling.RegisterHandler(RegisterModel.Username, hashedPassword);
     }
     public void OnGet()
     {

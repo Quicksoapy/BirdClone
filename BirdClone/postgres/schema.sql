@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS Messages (
     id serial PRIMARY KEY,
     user_id INT NOT NULL,
     content VARCHAR (1000) NOT NULL,
-    created_on TIMESTAMP NOT NULL
+    created_on TIMESTAMP WITH TIME ZONE NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Accounts (
@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS Accounts (
     password VARCHAR (512) UNIQUE NOT NULL,
     email VARCHAR (255) UNIQUE,
     country VARCHAR (255) NOT NULL,
-    created_on TIMESTAMP NOT NULL,
-    last_login TIMESTAMP
+    created_on TIMESTAMP WITH TIME ZONE NOT NULL,
+    last_login TIMESTAMP WITH TIME ZONE
 );
 

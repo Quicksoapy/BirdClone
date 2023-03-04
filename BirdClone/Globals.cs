@@ -19,7 +19,7 @@ public class Globals
         return hash;
     }
 
-    public async Task<NpgsqlConnection> GetConnection()
+    public static async Task<NpgsqlConnection> GetConnection()
     {
         var databaseLogin = JsonConvert.DeserializeObject<DatabaseLogin>(File.ReadAllText("DatabaseLogin.json"));
         
@@ -32,6 +32,7 @@ public class Globals
             new NpgsqlConnection(
                 "Host=" + server + ";Username=" + username+";Password=" + password+";Database=" + database+";Port="+port);
         await conn.OpenAsync();
+        
         return conn;
     }
 

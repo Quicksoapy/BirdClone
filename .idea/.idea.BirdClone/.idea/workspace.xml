@@ -7,16 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BirdClone/Globals.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BirdClone/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BirdClone/postgres/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone/postgres/DatabaseHandling.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/BirdClone.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/BirdClone.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Globals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Globals.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/obj/BirdClone.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/BirdClone.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/obj/BirdClone.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/BirdClone.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/project.assets.json" afterDir="false" />
@@ -37,9 +36,8 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bf9021a960b74107a7e141aa06bc9d8a0a53c929178c2fb95b1597be8af8dc/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/10616addb6e783cc90acec53f9316ccec363cf7a57b27055a964beafd4b32d95/ArgumentNullException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/97f781e0b41a234fb4a615ccff48c5b2d9c28611cd81496fa261ad4f9113eb/Future.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -50,16 +48,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "SolutionBuilderGeneralOptionsPage",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ],
+    "rider.external.source.directories": [
+      "/home/maya/.config/JetBrains/Rider2023.1/resharper-host/DecompilerCache",
+      "/home/maya/.config/JetBrains/Rider2023.1/resharper-host/SourcesCache",
+      "/home/maya/.local/share/Symbols/src"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BirdClone: https">
     <configuration name="BirdClone: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BirdClone/BirdClone.csproj" />
@@ -122,6 +131,7 @@
       <updated>1677487676795</updated>
       <workItem from="1677487684084" duration="2494000" />
       <workItem from="1677507767995" duration="1241000" />
+      <workItem from="1677953754300" duration="5441000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1677487782844</created>
@@ -130,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677487782844</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="worked on database handling, set db up">
+      <created>1677779856822</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677779856822</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +169,14 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="worked on database handling, set db up" />
+    <option name="LAST_COMMIT_MESSAGE" value="worked on database handling, set db up" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Frame#BirdClone.postgres.DatabaseHandling.RegisterHandler" memberName="result" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
