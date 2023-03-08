@@ -11,6 +11,7 @@ public class RegisterModel
     public UInt32 Id { get; set; }
     public string Username { get; set; } = "";
     public string Password { get; set; } = "";
+    public string Email { get; set; } = "";
 }
 
 public class Register : PageModel
@@ -25,7 +26,7 @@ public class Register : PageModel
         var databaseHandling = new DatabaseHandling();
         
         var hashedPassword = Globals.GetSha512(RegisterModel.Password);
-        databaseHandling.RegisterHandler(RegisterModel.Username, hashedPassword);
+        databaseHandling.RegisterHandler(RegisterModel.Username, hashedPassword, RegisterModel.Email);
     }
     public void OnGet()
     {

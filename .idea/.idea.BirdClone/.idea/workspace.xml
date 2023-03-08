@@ -8,6 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Globals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Globals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/postgres/DatabaseHandling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/postgres/DatabaseHandling.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +29,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/10616addb6e783cc90acec53f9316ccec363cf7a57b27055a964beafd4b32d95/ArgumentNullException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/97f781e0b41a234fb4a615ccff48c5b2d9c28611cd81496fa261ad4f9113eb/Future.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/maya/RiderProjects/BirdClone/BirdClone/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/maya/RiderProjects/BirdClone/BirdClone/postgres/DatabaseHandling.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -45,7 +48,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;SolutionBuilderGeneralOptionsPage&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.C#&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -123,6 +126,8 @@
       <workItem from="1677507767995" duration="1241000" />
       <workItem from="1677953754300" duration="5714000" />
       <workItem from="1678004795725" duration="1409000" />
+      <workItem from="1678045134512" duration="28000" />
+      <workItem from="1678091086075" duration="3687000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1677487782844</created>
@@ -145,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677969457103</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="DatabaseHandling.cs update">
+      <created>1678045155649</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678045155649</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,26 +181,10 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="worked on database handling, set db up" />
     <MESSAGE value="worked on db" />
-    <option name="LAST_COMMIT_MESSAGE" value="worked on db" />
+    <MESSAGE value="DatabaseHandling.cs update" />
+    <option name="LAST_COMMIT_MESSAGE" value="DatabaseHandling.cs update" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BirdClone/postgres/DatabaseHandling.cs</url>
-          <line>7</line>
-          <properties documentPath="$PROJECT_DIR$/BirdClone/postgres/DatabaseHandling.cs" initialLine="7" containingFunctionPresentation="method 'RegisterHandler'">
-            <startOffsets>
-              <option value="160" />
-            </startOffsets>
-            <endOffsets>
-              <option value="161" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Frame#BirdClone.postgres.DatabaseHandling.RegisterHandler" memberName="result" />

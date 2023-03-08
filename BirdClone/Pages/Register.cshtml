@@ -7,12 +7,13 @@
 
 @if (Model.IsLoggedIn)
 {
-    <p> Hallo allemaal :D </p>
+    <p>You're already logged into an account.</p>
 }
 
 
 <form method="post">
     <label>Username: </label><input type="text" asp-for="RegisterModel.Username"/>
+    <label>E-mail address:</label><input type="text" asp-for="RegisterModel.Email"/>
     <label>Password: </label><input type="text" asp-for="RegisterModel.Password"/>
     <button type="submit">Submit</button>
 </form>
