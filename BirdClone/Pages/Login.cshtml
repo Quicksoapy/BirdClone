@@ -5,15 +5,8 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<div>
-    
-</div>
-</body>
-</html>
+<form method="post">
+    <label>Username: </label><input type="text" asp-for="LoginModel.Username"/>
+    <label>Password: </label><input type="text" asp-for="LoginModel.Password"/>
+    <button type="submit">Submit</button>
+</form>

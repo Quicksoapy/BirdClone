@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2q5ApTkwb5Elhept4NlcxjRvcxxoZqCsrYGvVpxJ3B/uGPAyfGbe87PPa8mp50OTIl0c+cLWqYi9xGQxHrzOcg==",
+  "dgSpecHash": "zX6ylUY3rzPa3MHPOj9H1X5sxb61eHDU+AeGS0L/xNJ77xxUsp4560yYeaUSLtIjuLzyssrlA+8TfElyd8QIpg==",
   "success": true,
   "projectFilePath": "/home/maya/RiderProjects/BirdClone/BirdClone/BirdClone.csproj",
   "expectedPackageFiles": [
@@ -17,7 +17,10 @@
     "/home/maya/.nuget/packages/microsoft.extensions.options/7.0.0/microsoft.extensions.options.7.0.0.nupkg.sha512",
     "/home/maya/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "/home/maya/.nuget/packages/newtonsoft.json/13.0.2/newtonsoft.json.13.0.2.nupkg.sha512",
-    "/home/maya/.nuget/packages/npgsql/7.0.2/npgsql.7.0.2.nupkg.sha512"
+    "/home/maya/.nuget/packages/npgsql/7.0.2/npgsql.7.0.2.nupkg.sha512",
+    "/home/maya/.nuget/packages/microsoft.netcore.app.ref/7.0.2/microsoft.netcore.app.ref.7.0.2.nupkg.sha512",
+    "/home/maya/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.2/microsoft.aspnetcore.app.ref.7.0.2.nupkg.sha512",
+    "/home/maya/.nuget/packages/microsoft.netcore.app.host.linux-x64/7.0.2/microsoft.netcore.app.host.linux-x64.7.0.2.nupkg.sha512"
   ],
   "logs": []
 }

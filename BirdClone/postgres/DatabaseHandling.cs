@@ -14,7 +14,7 @@ public class DatabaseHandling
         string password = databaseLogin.password;
         string database = databaseLogin.database;
         string port = databaseLogin.port;
-        await using var conn =
+        var conn =
             new NpgsqlConnection(
                 "Host=" + server + ";Username=" + username+";Password=" + password+";Database=" + database+";Port="+port);
         await conn.OpenAsync();
@@ -30,25 +30,22 @@ public class DatabaseHandling
 
         public string port { get; set; }
     }
+
+    public async void LoginHandler(string username, string password)
+    {
+        var conn = GetConnection().Result;
+        //"Cannot access a disposed object"
+
+        await using var cmd =
+            new NpgsqlCommand("SELECT Id WHERE username=" + username + "AND WHERE password=" + password, conn);
+        var result = await cmd.ExecuteScalarAsync();
+        Console.WriteLine(result);
+    }
     
     public async void RegisterHandler(string username, string hashedPassword, string email)
     {
-        //var conn = GetConnection().Result;
-        //await conn.OpenAsync();
-        //"Cannot access a disposed object"
-        
-        var databaseLogin = JsonConvert.DeserializeObject<DatabaseLogin>(File.ReadAllText("DatabaseLogin.json"));
-        
-        string server = databaseLogin.server;
-        string usernameDb = databaseLogin.username;
-        string password = databaseLogin.password;
-        string database = databaseLogin.database;
-        string port = databaseLogin.port;
-        await using var conn =
-            new NpgsqlConnection(
-                "Host=" + server + ";Username=" + usernameDb+";Password=" + password+";Database=" + database+";Port="+port);
-        await conn.OpenAsync();
-        
+        var conn = GetConnection().Result;
+
         await using var cmd = new NpgsqlCommand("INSERT INTO accounts " +
                                                 "(username, password, email, country, created_on, last_login) VALUES " +
                                                 "($1, $2, $3, $4, $5, $6);", conn){

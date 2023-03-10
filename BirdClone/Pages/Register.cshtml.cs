@@ -27,6 +27,8 @@ public class Register : PageModel
         
         var hashedPassword = Globals.GetSha512(RegisterModel.Password);
         databaseHandling.RegisterHandler(RegisterModel.Username, hashedPassword, RegisterModel.Email);
+
+        Redirect("/");
     }
     public void OnGet()
     {
