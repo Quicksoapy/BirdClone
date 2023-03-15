@@ -31,15 +31,16 @@ public class DatabaseHandling
         public string port { get; set; }
     }
 
-    public async void LoginHandler(string username, string password)
+    public async Task<int> LoginHandler(string username, string password)
     {
         var conn = GetConnection().Result;
         //"Cannot access a disposed object"
 
         await using var cmd =
-            new NpgsqlCommand("SELECT Id WHERE username=" + username + "AND WHERE password=" + password, conn);
+            new NpgsqlCommand("SELECT Id FROM accounts WHERE username='" + username + "' AND password='" + password + "';", conn);
         var result = await cmd.ExecuteScalarAsync();
         Console.WriteLine(result);
+        return Convert.ToInt32(result);
     }
     
     public async void RegisterHandler(string username, string hashedPassword, string email)

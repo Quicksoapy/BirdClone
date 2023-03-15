@@ -5,6 +5,11 @@
     Layout = null;
 }
 
+@if (Request.Cookies["UserId"] != "0")
+{
+    Redirect("/Index");
+}
+
 <form method="post">
     <label>Username: </label><input type="text" asp-for="LoginModel.Username"/>
     <label>Password: </label><input type="text" asp-for="LoginModel.Password"/>

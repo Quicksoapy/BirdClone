@@ -16,8 +16,7 @@ public class RegisterModel
 
 public class Register : PageModel
 {
-    [BindProperty]
-    public RegisterModel RegisterModel { get; set; }
+    [BindProperty] public RegisterModel RegisterModel { get; set; }
 
     public bool IsLoggedIn { get; set; }
 

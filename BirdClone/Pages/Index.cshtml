@@ -4,6 +4,12 @@
     ViewData["Title"] = "Home page";
 }
 
+@if (!string.IsNullOrEmpty(Request.Cookies["UserId"]))
+{
+    <div class="text-center">
+        <h2 class="display-2">Hi user!</h2>
+    </div>
+}
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
 </div>

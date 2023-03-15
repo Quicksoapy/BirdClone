@@ -15,7 +15,7 @@ public class Globals
         var hash = "";
         var alg = SHA512.Create();
         var result = alg.ComputeHash(Encoding.UTF8.GetBytes(input));
-        hash = Encoding.UTF8.GetString(result);
+        hash = Convert.ToBase64String(result);
         return hash;
     }
 }

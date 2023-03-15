@@ -8,15 +8,11 @@
   <component name="ChangeListManager">
     <list default="true" id="67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Globals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Globals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/obj/BirdClone.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/BirdClone.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/postgres/DatabaseHandling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/postgres/DatabaseHandling.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +29,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/10616addb6e783cc90acec53f9316ccec363cf7a57b27055a964beafd4b32d95/ArgumentNullException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/97f781e0b41a234fb4a615ccff48c5b2d9c28611cd81496fa261ad4f9113eb/Future.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -131,6 +128,9 @@
       <workItem from="1677953754300" duration="5714000" />
       <workItem from="1678004795725" duration="1409000" />
       <workItem from="1678352555193" duration="3009000" />
+      <workItem from="1678782632949" duration="1926000" />
+      <workItem from="1678867797638" duration="814000" />
+      <workItem from="1678882420099" duration="3546000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1677487782844</created>
@@ -180,23 +180,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="worked on db" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BirdClone/postgres/DatabaseHandling.cs</url>
-          <line>8</line>
-          <properties documentPath="$PROJECT_DIR$/BirdClone/postgres/DatabaseHandling.cs" initialLine="8" containingFunctionPresentation="method 'GetConnection'">
-            <startOffsets>
-              <option value="168" />
-            </startOffsets>
-            <endOffsets>
-              <option value="169" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Frame#BirdClone.postgres.DatabaseHandling.RegisterHandler" memberName="result" />
