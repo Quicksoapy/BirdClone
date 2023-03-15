@@ -7,9 +7,12 @@
 @if (!string.IsNullOrEmpty(Request.Cookies["UserId"]))
 {
     <div class="text-center">
-        <h2 class="display-2">Hi user!</h2>
+        <h1 class="display-7">Hi @Request.Cookies["Username"]!</h1>
     </div>
 }
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-</div>
+else
+{   
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+    </div>
+}
