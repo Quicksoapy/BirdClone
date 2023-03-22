@@ -9,6 +9,10 @@
     <div class="text-center">
         <h1 class="display-7">Hi @Request.Cookies["Username"]!</h1>
     </div>
+    <form method="post">
+        <label>Message: </label><input type="text" asp-for="MessageModel.Content"/>
+        <button type="submit">Submit</button>
+    </form>
 }
 else
 {   

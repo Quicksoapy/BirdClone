@@ -1,3 +1,4 @@
+using BirdClone.Models;
 using Newtonsoft.Json;
 using Npgsql;
 
@@ -5,9 +6,9 @@ namespace BirdClone.postgres;
 
 public class DatabaseHandling
 {
-    public static async Task<NpgsqlConnection> GetConnection()
+    private static async Task<NpgsqlConnection> GetConnection()
     {
-        var databaseLogin = JsonConvert.DeserializeObject<DatabaseLogin>(File.ReadAllText("DatabaseLogin.json"));
+        var databaseLogin = JsonConvert.DeserializeObject<DatabaseLogin>(await File.ReadAllTextAsync("DatabaseLogin.json"));
         
         string server = databaseLogin.server;
         string username = databaseLogin.username;
@@ -43,7 +44,7 @@ public class DatabaseHandling
         return Convert.ToInt32(result);
     }
     
-    public async void RegisterHandler(string username, string hashedPassword, string email)
+    public async void RegisterHandler(RegisterModel registerModel)
     {
         var conn = GetConnection().Result;
 
@@ -52,9 +53,9 @@ public class DatabaseHandling
                                                 "($1, $2, $3, $4, $5, $6);", conn){
             Parameters =
             {
-                new NpgsqlParameter {Value = username},
-                new NpgsqlParameter {Value = hashedPassword},
-                new NpgsqlParameter {Value = email},
+                new NpgsqlParameter {Value = registerModel.Username},
+                new NpgsqlParameter {Value = registerModel.Password},
+                new NpgsqlParameter {Value = registerModel.Email},
                 new NpgsqlParameter {Value = ""},
                 new NpgsqlParameter {Value = DateTime.UtcNow},
                 new NpgsqlParameter {Value = DateTime.UtcNow}
@@ -62,5 +63,10 @@ public class DatabaseHandling
         };
         var result = await cmd.ExecuteNonQueryAsync();
         Console.WriteLine(result);
+    }
+
+    public async void PostMessageHandler(MessageModel messageModel)
+    {
+        
     }
 }
