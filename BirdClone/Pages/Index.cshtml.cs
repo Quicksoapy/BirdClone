@@ -24,6 +24,12 @@ public class IndexModel : PageModel
         var databaseHandling = new DatabaseHandling();
 
         Messages = databaseHandling.GetMessagesHandler().Result;
+        
+        if (!string.IsNullOrEmpty(Request.Cookies["UserId"]))
+        {
+            var account = databaseHandling.GetAccountDataById(Convert.ToInt32(Request.Cookies["UserId"])).Result;
+            Response.Cookies.Append("Username", account.Username);
+        }
     }
 
     public void OnPost()

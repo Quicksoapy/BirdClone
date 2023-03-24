@@ -1,0 +1,24 @@
+@page
+@model BirdClone.Pages.Account
+@{
+    ViewData["Title"] = "Account settings";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div>
+    <form method="post">
+        <label>@Model.AccountModel.Username </label><input type="text" asp-for="EditModel.Username"/>
+        <label>Password: </label><input type="text" asp-for="EditModel.Password"/>
+        <label>@Model.AccountModel.Email </label><input type="text" asp-for="EditModel.Email"/>
+        <label>@Model.AccountModel.Country </label><input type="text" asp-for="EditModel.Country"/>
+        <button type="submit">Edit</button>
+    </form>
+</div>
+</body>
+</html>

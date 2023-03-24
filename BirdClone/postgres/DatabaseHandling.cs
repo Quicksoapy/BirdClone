@@ -1,4 +1,5 @@
 using BirdClone.Models;
+using BirdClone.Pages;
 using Newtonsoft.Json;
 using Npgsql;
 
@@ -108,5 +109,61 @@ public class DatabaseHandling
 
         return messageModels;
     }
-    
+
+    public async Task<AccountModel> GetAccountDataById(int userId)
+    {
+        var conn = GetConnection().Result;
+        var account = new AccountModel();
+        
+        await using var cmd = new NpgsqlCommand("SELECT * FROM accounts WHERE id = " + userId, conn);
+        var dataReader = await cmd.ExecuteReaderAsync();
+        while (dataReader.Read())
+        {
+            account.Id = dataReader.GetInt32(dataReader.GetOrdinal("id"));
+            account.Username = dataReader.GetString(dataReader.GetOrdinal("username"));
+            account.Email = dataReader.GetString(dataReader.GetOrdinal("email"));
+            account.Country = dataReader.GetString(dataReader.GetOrdinal("country"));
+            account.CreatedOn = dataReader.GetDateTime(dataReader.GetOrdinal("created_on"));
+            account.LastLogin = dataReader.GetDateTime(dataReader.GetOrdinal("last_login"));
+        }
+
+        return account;
+    }
+
+    public void EditAccount(AccountModel accountModel, AccountModel editModel)
+    {
+        var conn = GetConnection().Result;
+        
+        if (!string.IsNullOrWhiteSpace(editModel.Username))
+        {
+            accountModel.Username = editModel.Username;
+        }
+        if (!string.IsNullOrWhiteSpace(editModel.Password))
+        {
+            accountModel.Password = editModel.Password;
+        }
+        if (!string.IsNullOrWhiteSpace(editModel.Email))
+        {
+            accountModel.Email = editModel.Email;
+        }
+        if (!string.IsNullOrWhiteSpace(editModel.Country))
+        {
+            accountModel.Country = editModel.Country;
+        }
+        
+        using var cmd = new NpgsqlCommand("UPDATE accounts SET username = $1, password = $2, " +
+                                      "email = $3, country = $4 WHERE id = $5;", conn)
+        {
+           Parameters =
+           {
+               new NpgsqlParameter { Value = accountModel.Username },
+               new NpgsqlParameter { Value = accountModel.Password },
+               new NpgsqlParameter { Value = accountModel.Email },
+               new NpgsqlParameter { Value = accountModel.Country },
+               new NpgsqlParameter { Value = accountModel.Id}
+           }
+        };
+        var result = cmd.ExecuteNonQueryAsync().Result;
+        Console.WriteLine(result);
+    }
 }
