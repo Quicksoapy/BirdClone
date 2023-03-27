@@ -89,12 +89,12 @@ public class DatabaseHandling
         Console.WriteLine(result);
     }
     
-    public async Task<List<MessageModel>> GetMessagesHandler()
+    public static async Task<List<MessageModel>> GetMessagesHandler()
     {
         var conn = GetConnection().Result;
         var messageModels = new List<MessageModel>();
         
-        await using var cmd = new NpgsqlCommand("SELECT messages.id, messages.content, messages.user_id, messages.created_on, accounts.username FROM messages JOIN accounts ON messages.user_id = accounts.id", conn);
+        await using var cmd = new NpgsqlCommand("SELECT messages.id, messages.content, messages.user_id, messages.created_on, accounts.username FROM messages JOIN accounts ON messages.user_id = accounts.id ORDER BY messages.created_on DESC", conn);
         var dataReader = await cmd.ExecuteReaderAsync();
         while (dataReader.Read())
         {
@@ -110,6 +110,32 @@ public class DatabaseHandling
         return messageModels;
     }
 
+    public async Task<List<MessageModel>> GetMessagesOfUserById(int userId)
+    {
+        var conn = GetConnection().Result;
+        var messageModels = new List<MessageModel>();
+        
+        await using var cmd = new NpgsqlCommand("SELECT * FROM messages WHERE user_id = @userId ORDER BY created_on DESC", conn)
+            {
+                Parameters = {
+                    new NpgsqlParameter { ParameterName = "userId", Value = userId }
+                }
+            };
+        
+        var dataReader = await cmd.ExecuteReaderAsync();
+        while (dataReader.Read())
+        {
+            var model = new MessageModel();
+            model.Id = (uint)dataReader.GetInt64(dataReader.GetOrdinal("id"));
+            model.UserId = dataReader.GetInt32(dataReader.GetOrdinal("user_id"));
+            model.Content = dataReader.GetString(dataReader.GetOrdinal("content"));
+            model.CreatedOn = dataReader.GetDateTime(dataReader.GetOrdinal("created_on"));
+            messageModels.Add(model);
+        }
+
+        return messageModels;
+    }
+    
     public async Task<AccountModel> GetAccountDataById(int userId)
     {
         var conn = GetConnection().Result;
@@ -130,38 +156,35 @@ public class DatabaseHandling
         return account;
     }
 
-    public void EditAccount(AccountModel accountModel, AccountModel editModel)
+    public void EditAccount(AccountModel settingsModel)
     {
         var conn = GetConnection().Result;
-        
-        if (!string.IsNullOrWhiteSpace(editModel.Username))
-        {
-            accountModel.Username = editModel.Username;
-        }
-        if (!string.IsNullOrWhiteSpace(editModel.Password))
-        {
-            accountModel.Password = editModel.Password;
-        }
-        if (!string.IsNullOrWhiteSpace(editModel.Email))
-        {
-            accountModel.Email = editModel.Email;
-        }
-        if (!string.IsNullOrWhiteSpace(editModel.Country))
-        {
-            accountModel.Country = editModel.Country;
-        }
-        
         using var cmd = new NpgsqlCommand("UPDATE accounts SET username = $1, password = $2, " +
-                                      "email = $3, country = $4 WHERE id = $5;", conn)
+                                          "email = $3, country = $4 WHERE id = $5;", conn)
         {
            Parameters =
            {
-               new NpgsqlParameter { Value = accountModel.Username },
-               new NpgsqlParameter { Value = accountModel.Password },
-               new NpgsqlParameter { Value = accountModel.Email },
-               new NpgsqlParameter { Value = accountModel.Country },
-               new NpgsqlParameter { Value = accountModel.Id}
+               new NpgsqlParameter { Value = settingsModel.Username },
+               new NpgsqlParameter { Value = settingsModel.Password },
+               new NpgsqlParameter { Value = settingsModel.Email },
+               new NpgsqlParameter { Value = settingsModel.Country },
+               new NpgsqlParameter { Value = settingsModel.Id}
            }
+        };
+        var result = cmd.ExecuteNonQueryAsync().Result;
+        Console.WriteLine(result);
+    }
+
+    public void UpdateLastLogin(int userId)
+    {
+        var conn = GetConnection().Result;
+        using var cmd = new NpgsqlCommand("UPDATE accounts SET last_login = $1 WHERE id = $2;", conn)
+        {
+            Parameters =
+            {
+                new NpgsqlParameter { Value = DateTime.UtcNow },
+                new NpgsqlParameter { Value = userId }
+            }
         };
         var result = cmd.ExecuteNonQueryAsync().Result;
         Console.WriteLine(result);

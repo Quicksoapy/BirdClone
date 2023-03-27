@@ -7,11 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BirdClone/Models/AccountModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BirdClone/Pages/Account.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BirdClone/Pages/Account.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone/Pages/Settings.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone/Pages/Settings.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Models/AccountModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Models/AccountModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Account.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Account.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Account.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Account.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/postgres/DatabaseHandling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/postgres/DatabaseHandling.cs" afterDir="false" />
@@ -29,6 +35,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/441d103d8149d561cea0afccaaad79dd6f325fa44d78f954d43ba61e9b4cc76/ExecutorFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -131,6 +138,10 @@
       <workItem from="1678867797638" duration="814000" />
       <workItem from="1678882420099" duration="5094000" />
       <workItem from="1679314943499" duration="4915000" />
+      <workItem from="1679660323365" duration="27000" />
+      <workItem from="1679695996213" duration="80000" />
+      <workItem from="1679899778789" duration="8302000" />
+      <workItem from="1679922856122" duration="6082000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1677487782844</created>
@@ -160,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678886015254</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="account page">
+      <created>1679660331696</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679660331696</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,7 +203,8 @@
     <MESSAGE value="worked on database handling, set db up" />
     <MESSAGE value="worked on db" />
     <MESSAGE value="user can now login, Id is saved in cookies (unsafe)" />
-    <option name="LAST_COMMIT_MESSAGE" value="user can now login, Id is saved in cookies (unsafe)" />
+    <MESSAGE value="account page" />
+    <option name="LAST_COMMIT_MESSAGE" value="account page" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

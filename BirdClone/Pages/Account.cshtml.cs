@@ -8,22 +8,11 @@ namespace BirdClone.Pages;
 public class Account : PageModel
 {
     [BindProperty] public AccountModel AccountModel { get; set; }
-    
-    [BindProperty] public AccountModel EditModel { get; set; }
-    
-    public void OnGet()
+    [BindProperty] public List<MessageModel> MessagesByUser { get; set; }
+    public void OnGet(int id)
     {
         var databaseHandling = new DatabaseHandling();
-        var userId = Convert.ToInt32(Request.Cookies["UserId"]);
-
-        AccountModel = databaseHandling.GetAccountDataById(userId).Result;
-    }
-
-    public void OnPost()
-    {
-        var databaseHandling = new DatabaseHandling();
-        AccountModel.Id = Convert.ToInt32(Request.Cookies["UserId"]);
-        
-        databaseHandling.EditAccount(AccountModel, EditModel);
+        AccountModel = databaseHandling.GetAccountDataById(id).Result;
+        MessagesByUser = databaseHandling.GetMessagesOfUserById(id).Result;
     }
 }

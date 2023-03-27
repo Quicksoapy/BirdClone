@@ -1,24 +1,31 @@
 @page
 @model BirdClone.Pages.Account
+
 @{
-    ViewData["Title"] = "Account settings";
+    ViewData["Title"] = "Account";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<div>
-    <form method="post">
-        <label>@Model.AccountModel.Username </label><input type="text" asp-for="EditModel.Username"/>
-        <label>Password: </label><input type="text" asp-for="EditModel.Password"/>
-        <label>@Model.AccountModel.Email </label><input type="text" asp-for="EditModel.Email"/>
-        <label>@Model.AccountModel.Country </label><input type="text" asp-for="EditModel.Country"/>
-        <button type="submit">Edit</button>
-    </form>
+<div class="media">
+    <img width="120" height="120" src="https://preview.redd.it/1oa5cgegvhk11.jpg?width=640&crop=smart&auto=webp&s=4c423b71fdfa80178e5e2323cd7606128115549b" alt="Generic placeholder image">
+    <div class="media-body">
+        <h5 class="mt-0">@Model.AccountModel.Username</h5>
+        BIO WILL COME HERE: Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.<br/>  
+        @Model.AccountModel.Country<br/>    
+        @Model.AccountModel.CreatedOn.ToString("ddd, dd MMM yyyy H:mm:ss")<br/> 
+        @Model.AccountModel.LastLogin.ToString("ddd, dd MMM yyyy H:mm:ss")<br/>
+        
+        
+    </div>
 </div>
-</body>
-</html>
+
+@foreach (var message in Model.MessagesByUser)
+{
+    <div class="card" style="width: 18rem; margin-right: 1rem; margin-top: 1rem; float: left;">
+        <div class="card-body">
+            <h5 class="card-title"><a asp-page="/Account" asp-route-id="@message.UserId">@Model.AccountModel.Username</a></h5>
+            <p class="card-text">@message.Content</p>
+            <p class="card-text text-muted">@message.CreatedOn.ToString("ddd, dd MMM yyyy H:mm:ss")</p>
+        </div>
+    </div>
+}
+

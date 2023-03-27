@@ -2,16 +2,22 @@
 @model BirdClone.Pages.Login
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Login";
 }
+
+<style>
+    .hide {display: none}
+    .failed_login {background-color: indianred;}
+</style>
 
 @if (Request.Cookies["UserId"] != "0")
 {
     Redirect("/Index");
 }
+<div class='@(Model.LoginSuccess ? "hide" : "alert alert-danger")'>Login failed. Check the username and password input.</div>
 
 <form method="post">
     <label>Username: </label><input type="text" asp-for="LoginModel.Username"/>
-    <label>Password: </label><input type="text" asp-for="LoginModel.Password"/>
+    <label>Password: </label><input type="password" asp-for="LoginModel.Password"/>
     <button type="submit">Submit</button>
 </form>

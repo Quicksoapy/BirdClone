@@ -4,14 +4,18 @@
     ViewData["Title"] = "Home page";
 }
 
-@if (!string.IsNullOrEmpty(Request.Cookies["UserId"]))
+@if (!string.IsNullOrEmpty(Request.Cookies["UserId"]) && Request.Cookies["UserId"]  != "0")
 {
     <div class="text-center">
-        <h1 class="display-7">Hi @Request.Cookies["Username"]!</h1>
+        <h1 class="display-7">Hi <a href="/Settings">@Request.Cookies["Username"]</a>!</h1>
     </div>
     <form method="post">
-        <label>Message: </label><input type="text" asp-for="MessageModel.Content"/>
-        <button type="submit">Submit</button>
+        <div class="form-group">
+            <label>Message:</label>
+            <textarea class="form-control" asp-for="MessageModel.Content" rows="3" maxlength="500"></textarea>
+        </div>
+        <label style="color: darkgrey;">Maximum 500 characters.</label>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 }
 else
@@ -21,24 +25,13 @@ else
     </div>
 }
 
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col"></th>
-        <th scope="col">Username</th>
-        <th scope="col">Content</th>
-        <th scope="col">Time</th>
-    </tr>
-    </thead>
-    <tbody>
 @foreach (var message in Model.Messages)
 {
-    <tr>
-        <th scope="row"></th>
-        <td>@message.Username</td>
-        <td>@message.Content</td>
-        <td>@message.CreatedOn</td>
-    </tr>
+    <div class="card" style="width: 18rem; margin-right: 1rem; margin-top: 1rem; float: left;">
+        <div class="card-body">
+            <h5 class="card-title"><a asp-page="/Account" asp-route-id="@message.UserId">@message.Username</a></h5>
+            <p class="card-text">@message.Content</p>
+            <p class="card-text text-muted">@message.CreatedOn.ToString("ddd, dd MMM yyyy H:mm:ss")</p>
+        </div>
+    </div>
 }
-    </tbody>
-</table>

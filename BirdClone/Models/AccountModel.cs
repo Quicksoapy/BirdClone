@@ -1,4 +1,5 @@
-using System.Runtime.InteropServices.JavaScript;
+
+using System.Net.Mime;
 
 namespace BirdClone.Models;
 
@@ -11,4 +12,6 @@ public class AccountModel
     public string Country { get; set; } = "";
     public DateTime CreatedOn { get; set; }
     public DateTime LastLogin { get; set; }
+    public string Bio { get; set; } = "";
+    public string ProfilePicture { get; set; } = "";
 }

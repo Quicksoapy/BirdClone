@@ -15,20 +15,30 @@ public class LoginModel
 public class Login : PageModel
 {
     [BindProperty] public LoginModel LoginModel { get; set; }
+
+    public bool LoginSuccess { get; set; } = true;
     public void OnGet()
     {
         
     }
 
-    public void OnPost(string username, string password)
+    public RedirectToActionResult? OnPost(string username, string password)
     {
         var databaseHandling = new DatabaseHandling();
         
         var hashedPassword = Globals.GetSha512(LoginModel.Password);
         LoginModel.UserId = databaseHandling.LoginHandler(LoginModel.Username, hashedPassword).Result;
+        
+        if (LoginModel.UserId == 0)
+        {
+            LoginSuccess = false;
+            return null;
+        }
+        
         Response.Cookies.Append("UserId", LoginModel.UserId.ToString());
         Response.Cookies.Append("Username", LoginModel.Username);
+        databaseHandling.UpdateLastLogin(LoginModel.UserId);
         Console.WriteLine(Request.Cookies["UserId"]);
-        Redirect("/");
+        return RedirectToAction("Index", "IndexModel");
     }
 }
