@@ -42,3 +42,7 @@ public class IndexModel : PageModel
         OnGet();
     }
 }
+//TODO look at flexbox, css-grid, bootstrap column rows for nicer mosaic style messages
+//https://getbootstrap.com/docs/5.3/utilities/spacing/
+//https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+//https://css-tricks.com/snippets/css/complete-guide-grid/

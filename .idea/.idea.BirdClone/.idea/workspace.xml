@@ -7,20 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BirdClone/Pages/Settings.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BirdClone/Pages/Settings.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/Models/AccountModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Models/AccountModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Account.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Account.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Account.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Account.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/postgres/DatabaseHandling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/postgres/DatabaseHandling.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +26,9 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/441d103d8149d561cea0afccaaad79dd6f325fa44d78f954d43ba61e9b4cc76/ExecutorFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/10616addb6e783cc90acec53f9316ccec363cf7a57b27055a964beafd4b32d95/ArgumentNullException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/97f781e0b41a234fb4a615ccff48c5b2d9c28611cd81496fa261ad4f9113eb/Future.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BirdClone/Pages/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">

@@ -3,12 +3,16 @@
 @{
     ViewData["Title"] = "Home page";
 }
-
+<body style="margin-bottom: 10px">
 @if (!string.IsNullOrEmpty(Request.Cookies["UserId"]) && Request.Cookies["UserId"]  != "0")
 {
     <div class="text-center">
         <h1 class="display-7">Hi <a href="/Settings">@Request.Cookies["Username"]</a>!</h1>
     </div>
+        
+        
+        
+        
     <form method="post">
         <div class="form-group">
             <label>Message:</label>
@@ -35,3 +39,6 @@ else
         </div>
     </div>
 }
+<div style="clear:both"></div>
+</body>
+
