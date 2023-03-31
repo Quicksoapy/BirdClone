@@ -21,23 +21,24 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-        var databaseHandling = new DatabaseHandling();
+        var dbMessages = new DbMessages();
+        var dbUser = new DbUser();
 
-        Messages = DatabaseHandling.GetMessagesHandler().Result;
+        Messages = dbMessages.GetMessagesHandler().Result;
         if (!string.IsNullOrEmpty(Request.Cookies["UserId"]))
         {
-            var account = databaseHandling.GetAccountDataById(Convert.ToInt32(Request.Cookies["UserId"])).Result;
+            var account = dbUser.GetAccountDataById(Convert.ToInt32(Request.Cookies["UserId"])).Result;
             Response.Cookies.Append("Username", account.Username);
         }
     }
 
     public void OnPost()
     {
-        var databaseHandling = new DatabaseHandling();
-
+        var dbMessages = new DbMessages();
+        
         MessageModel.CreatedOn = DateTime.UtcNow;
         MessageModel.UserId = Convert.ToInt32(Request.Cookies["UserId"]);
-        databaseHandling.PostMessageHandler(MessageModel);
+        dbMessages.PostMessageHandler(MessageModel);
         
         OnGet();
     }

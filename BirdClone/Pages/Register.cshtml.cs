@@ -15,10 +15,10 @@ public class Register : PageModel
 
     public void OnPost()
     {
-        var databaseHandling = new DatabaseHandling();
+        var dbUser = new DbUser();
         
         RegisterModel.Password = Globals.GetSha512(RegisterModel.Password);
-        databaseHandling.RegisterHandler(RegisterModel);
+        dbUser.RegisterHandler(RegisterModel);
 
         Redirect("/");
     }

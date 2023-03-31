@@ -9,10 +9,7 @@
     <div class="text-center">
         <h1 class="display-7">Hi <a href="/Settings">@Request.Cookies["Username"]</a>!</h1>
     </div>
-        
-        
-        
-        
+
     <form method="post">
         <div class="form-group">
             <label>Message:</label>
@@ -22,6 +19,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 }
+
 else
 {   
     <div class="text-center">
@@ -29,9 +27,10 @@ else
     </div>
 }
 
+<div class="grid">
 @foreach (var message in Model.Messages)
 {
-    <div class="card" style="width: 18rem; margin-right: 1rem; margin-top: 1rem; float: left;">
+    <div class="card grid-item float-start" style="width: 18rem; margin-right: 1rem; margin-top: 1rem;">
         <div class="card-body">
             <h5 class="card-title"><a asp-page="/Account" asp-route-id="@message.UserId">@message.Username</a></h5>
             <p class="card-text">@message.Content</p>
@@ -39,6 +38,5 @@ else
         </div>
     </div>
 }
-<div style="clear:both"></div>
+</div>
 </body>
-

@@ -22,12 +22,12 @@ public class Login : PageModel
         
     }
 
-    public RedirectToActionResult? OnPost(string username, string password)
+    public IActionResult? OnPost(string username, string password)
     {
-        var databaseHandling = new DatabaseHandling();
+        var dbUser = new DbUser();
         
         var hashedPassword = Globals.GetSha512(LoginModel.Password);
-        LoginModel.UserId = databaseHandling.LoginHandler(LoginModel.Username, hashedPassword).Result;
+        LoginModel.UserId = dbUser.LoginHandler(LoginModel.Username, hashedPassword).Result;
         
         if (LoginModel.UserId == 0)
         {
@@ -37,8 +37,7 @@ public class Login : PageModel
         
         Response.Cookies.Append("UserId", LoginModel.UserId.ToString());
         Response.Cookies.Append("Username", LoginModel.Username);
-        databaseHandling.UpdateLastLogin(LoginModel.UserId);
         Console.WriteLine(Request.Cookies["UserId"]);
-        return RedirectToAction("Index", "IndexModel");
+        return Redirect("/Index");
     }
 }

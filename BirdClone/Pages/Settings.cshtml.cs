@@ -11,18 +11,18 @@ public class Settings : PageModel
     
     public void OnGet()
     {
-        var databaseHandling = new DatabaseHandling();
+        var dbUser = new DbUser();
         var userId = Convert.ToInt32(Request.Cookies["UserId"]);
 
-        SettingsModel = databaseHandling.GetAccountDataById(userId).Result;
+        SettingsModel = dbUser.GetAccountDataById(userId).Result;
     }
 
     public void OnPost()
     {
-        var databaseHandling = new DatabaseHandling();
+        var dbUser = new DbUser();
         SettingsModel.Id = Convert.ToInt32(Request.Cookies["UserId"]);
         SettingsModel.Password = Globals.GetSha512(SettingsModel.Password);
         
-        databaseHandling.EditAccount(SettingsModel);
+        dbUser.EditAccount(SettingsModel);
     }
 }
