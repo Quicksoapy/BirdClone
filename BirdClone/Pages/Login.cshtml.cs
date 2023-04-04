@@ -27,7 +27,7 @@ public class Login : PageModel
         var dbUser = new DbUser();
         
         var hashedPassword = Globals.GetSha512(LoginModel.Password);
-        LoginModel.UserId = dbUser.LoginHandler(LoginModel.Username, hashedPassword).Result;
+        LoginModel.UserId = DbUser.LoginHandler(LoginModel.Username, hashedPassword).Result;
         
         if (LoginModel.UserId == 0)
         {

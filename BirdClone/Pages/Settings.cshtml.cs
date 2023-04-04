@@ -11,10 +11,9 @@ public class Settings : PageModel
     
     public void OnGet()
     {
-        var dbUser = new DbUser();
         var userId = Convert.ToInt32(Request.Cookies["UserId"]);
 
-        SettingsModel = dbUser.GetAccountDataById(userId).Result;
+        SettingsModel = DbUser.GetAccountDataById(userId).Result;
     }
 
     public void OnPost()
@@ -23,6 +22,6 @@ public class Settings : PageModel
         SettingsModel.Id = Convert.ToInt32(Request.Cookies["UserId"]);
         SettingsModel.Password = Globals.GetSha512(SettingsModel.Password);
         
-        dbUser.EditAccount(SettingsModel);
+        DbUser.EditAccount(SettingsModel);
     }
 }

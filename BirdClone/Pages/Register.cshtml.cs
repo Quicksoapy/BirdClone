@@ -18,7 +18,7 @@ public class Register : PageModel
         var dbUser = new DbUser();
         
         RegisterModel.Password = Globals.GetSha512(RegisterModel.Password);
-        dbUser.RegisterHandler(RegisterModel);
+        DbUser.RegisterHandler(RegisterModel);
 
         Redirect("/");
     }

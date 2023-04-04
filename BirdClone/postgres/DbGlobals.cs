@@ -6,7 +6,7 @@ namespace BirdClone.postgres;
 
 public class DbGlobals
 {
-    public async Task<NpgsqlConnection> GetDatabaseConnection()
+    public static async Task<NpgsqlConnection> GetDatabaseConnection()
     {
         var databaseLogin =
             JsonConvert.DeserializeObject<DatabaseLoginModel>(await File.ReadAllTextAsync("DatabaseLogin.json"));

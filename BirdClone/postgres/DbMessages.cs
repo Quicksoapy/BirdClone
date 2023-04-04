@@ -5,10 +5,9 @@ namespace BirdClone.postgres;
 
 public class DbMessages
 {
-    private static readonly DbGlobals DbGlobals = new();
     private static readonly NpgsqlConnection Conn = DbGlobals.GetDatabaseConnection().Result;
     
-    public async void PostMessageHandler(MessageModel messageModel)
+    public static async void PostMessageHandler(MessageModel messageModel)
     {
         await using var cmd = new NpgsqlCommand("INSERT INTO messages " +
                                                 "(user_id, content, created_on) VALUES " +
@@ -25,7 +24,7 @@ public class DbMessages
         Console.WriteLine(result);
     }
     
-    public async Task<List<MessageModel>> GetMessagesHandler()
+    public static async Task<List<MessageModel>> GetMessagesHandler()
     {
         var messageModels = new List<MessageModel>();
         
@@ -33,19 +32,21 @@ public class DbMessages
         var dataReader = await cmd.ExecuteReaderAsync();
         while (dataReader.Read())
         {
-            var model = new MessageModel();
-            model.Id = (uint)dataReader.GetInt64(dataReader.GetOrdinal("id"));
-            model.UserId = dataReader.GetInt32(dataReader.GetOrdinal("user_id"));
-            model.Content = dataReader.GetString(dataReader.GetOrdinal("content"));
-            model.CreatedOn = dataReader.GetDateTime(dataReader.GetOrdinal("created_on"));
-            model.Username = dataReader.GetString(dataReader.GetOrdinal("username"));
+            var model = new MessageModel
+            {
+                Id = (uint)dataReader.GetInt64(dataReader.GetOrdinal("id")),
+                UserId = dataReader.GetInt32(dataReader.GetOrdinal("user_id")),
+                Content = dataReader.GetString(dataReader.GetOrdinal("content")),
+                CreatedOn = dataReader.GetDateTime(dataReader.GetOrdinal("created_on")),
+                Username = dataReader.GetString(dataReader.GetOrdinal("username"))
+            };
             messageModels.Add(model);
         }
 
         return messageModels;
     }
 
-    public async Task<List<MessageModel>> GetMessagesOfUserById(int userId)
+    public static async Task<List<MessageModel>> GetMessagesOfUserById(int userId)
     {
         var messageModels = new List<MessageModel>();
         
@@ -59,11 +60,13 @@ public class DbMessages
         var dataReader = await cmd.ExecuteReaderAsync();
         while (dataReader.Read())
         {
-            var model = new MessageModel();
-            model.Id = (uint)dataReader.GetInt64(dataReader.GetOrdinal("id"));
-            model.UserId = dataReader.GetInt32(dataReader.GetOrdinal("user_id"));
-            model.Content = dataReader.GetString(dataReader.GetOrdinal("content"));
-            model.CreatedOn = dataReader.GetDateTime(dataReader.GetOrdinal("created_on"));
+            var model = new MessageModel
+            {
+                Id = (uint)dataReader.GetInt64(dataReader.GetOrdinal("id")),
+                UserId = dataReader.GetInt32(dataReader.GetOrdinal("user_id")),
+                Content = dataReader.GetString(dataReader.GetOrdinal("content")),
+                CreatedOn = dataReader.GetDateTime(dataReader.GetOrdinal("created_on"))
+            };
             messageModels.Add(model);
         }
 

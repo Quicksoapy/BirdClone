@@ -11,10 +11,7 @@ public class Account : PageModel
     [BindProperty] public List<MessageModel> MessagesByUser { get; set; }
     public void OnGet(int id)
     {
-        var dbUser = new DbUser();
-        var dbMessages = new DbMessages();
-        
-        AccountModel = dbUser.GetAccountDataById(id).Result;
-        MessagesByUser = dbMessages.GetMessagesOfUserById(id).Result;
+        AccountModel = DbUser.GetAccountDataById(id).Result;
+        MessagesByUser = DbMessages.GetMessagesOfUserById(id).Result;
     }
 }

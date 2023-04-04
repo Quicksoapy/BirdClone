@@ -5,10 +5,9 @@ namespace BirdClone.postgres;
 
 public class DbUser
 {
-    private static readonly DbGlobals DbGlobals = new();
     private static readonly NpgsqlConnection Conn = DbGlobals.GetDatabaseConnection().Result;
     
-    public async Task<int> LoginHandler(string username, string password)
+    public static async Task<int> LoginHandler(string username, string password)
     {
         await using var cmd =
             new NpgsqlCommand(
@@ -24,7 +23,7 @@ public class DbUser
         return resultInt32;
     }
 
-    public async void RegisterHandler(RegisterModel registerModel)
+    public static async void RegisterHandler(RegisterModel registerModel)
     {
         var conn = DbGlobals.GetDatabaseConnection().Result;
 
@@ -46,7 +45,7 @@ public class DbUser
         Console.WriteLine(result);
     }
 
-    public async Task<AccountModel> GetAccountDataById(int userId)
+    public static async Task<AccountModel> GetAccountDataById(int userId)
     {
         var conn = DbGlobals.GetDatabaseConnection().Result;
         var account = new AccountModel();
@@ -66,7 +65,7 @@ public class DbUser
         return account;
     }
 
-    public void EditAccount(AccountModel settingsModel)
+    public static void EditAccount(AccountModel settingsModel)
     {
         var conn = DbGlobals.GetDatabaseConnection().Result;
         using var cmd = new NpgsqlCommand("UPDATE accounts SET username = $1, password = $2, " +
@@ -85,7 +84,7 @@ public class DbUser
         Console.WriteLine(result);
     }
 
-    public void UpdateLastLogin(int userId)
+    private static void UpdateLastLogin(int userId)
     {
         var conn = DbGlobals.GetDatabaseConnection().Result;
         using var cmd = new NpgsqlCommand("UPDATE accounts SET last_login = $1 WHERE id = $2;", conn)

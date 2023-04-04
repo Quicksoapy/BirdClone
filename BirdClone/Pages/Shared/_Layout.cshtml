@@ -28,7 +28,7 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                     </li>
-                    @if (!string.IsNullOrEmpty(Model.Request?.Cookies["UserId"]) && Model.Request.Cookies["UserId"] != "0")
+                    @if (!string.IsNullOrEmpty(Context.Request.Cookies["UserId"]) && Context.Request.Cookies["UserId"] != "0")
                     {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Settings">Settings</a>
