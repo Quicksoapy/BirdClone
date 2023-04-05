@@ -19,7 +19,6 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 }
-
 else
 {   
     <div class="text-center">
@@ -28,15 +27,15 @@ else
 }
 
 <div class="grid">
-@foreach (var message in Model.Messages)
-{
-    <div class="card grid-item float-start" style="width: 18rem; margin-right: 1rem; margin-top: 1rem;">
-        <div class="card-body">
-            <h5 class="card-title"><a asp-page="/Account" asp-route-id="@message.UserId">@message.Username</a></h5>
-            <p class="card-text">@message.Content</p>
-            <p class="card-text text-muted">@message.CreatedOn.ToString("ddd, dd MMM yyyy H:mm:ss")</p>
+    @foreach (var message in Model.Messages)
+    {
+        <div class="card grid-item float-start" style="width: 18rem; margin-right: 1rem; margin-top: 1rem;">
+            <div class="card-body">
+                <h5 class="card-title"><a asp-page="/Account" asp-route-id="@message.UserId">@message.Username</a></h5>
+                <p class="card-text">@message.Content</p>
+                <p class="card-text text-muted">@message.CreatedOn.ToString("ddd, dd MMM yyyy H:mm:ss")</p>
+            </div>
         </div>
-    </div>
-}
+    }
 </div>
 </body>

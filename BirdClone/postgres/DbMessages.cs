@@ -26,9 +26,10 @@ public class DbMessages
     
     public static async Task<List<MessageModel>> GetMessagesHandler()
     {
+        var conn = DbGlobals.GetDatabaseConnection().Result;
         var messageModels = new List<MessageModel>();
         
-        await using var cmd = new NpgsqlCommand("SELECT messages.id, messages.content, messages.user_id, messages.created_on, accounts.username FROM messages JOIN accounts ON messages.user_id = accounts.id ORDER BY messages.created_on DESC", Conn);
+        await using var cmd = new NpgsqlCommand("SELECT messages.id, messages.content, messages.user_id, messages.created_on, accounts.username FROM messages JOIN accounts ON messages.user_id = accounts.id ORDER BY messages.created_on DESC", conn);
         var dataReader = await cmd.ExecuteReaderAsync();
         while (dataReader.Read())
         {

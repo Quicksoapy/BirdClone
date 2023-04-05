@@ -25,3 +25,8 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
+
+//TODO 3 layer system (3 projects)
+//TODO look at interfaces
+
+//TODO unit tests?
