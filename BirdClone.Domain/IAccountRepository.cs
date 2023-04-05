@@ -1,17 +1,16 @@
-using BirdClone.Models;
+using BirdClone.Domain.Accounts; //TODO Why do i have to add this here but not in IMessageRepository???
 using Npgsql;
+//TODO the repositories don't seem to care if they have the things the interface tells them to have. 
+//TODO my codebase worked differently as i use static async funcs
+namespace BirdClone.Domain;
 
-namespace BirdClone.postgres;
-
-public class DbUser
+public interface IAccountRepository
 {
-    private static readonly NpgsqlConnection Conn = DbGlobals.GetDatabaseConnection().Result;
-    
-    public static async Task<int> LoginHandler(string username, string password)
+    public static async Task<int> LoginHandler(string username, string password, NpgsqlConnection conn)
     {
         await using var cmd =
             new NpgsqlCommand(
-                "SELECT Id FROM accounts WHERE username='" + username + "' AND password='" + password + "';", Conn);
+                "SELECT Id FROM accounts WHERE username='" + username + "' AND password='" + password + "';", conn);
         var result = await cmd.ExecuteScalarAsync();
         
         var resultInt32 = Convert.ToInt32(result);
@@ -23,10 +22,8 @@ public class DbUser
         return resultInt32;
     }
 
-    public static async void RegisterHandler(RegisterModel registerModel)
+    public static async void RegisterHandler(AccountDto registerModel, NpgsqlConnection conn)
     {
-        var conn = DbGlobals.GetDatabaseConnection().Result;
-
         await using var cmd = new NpgsqlCommand("INSERT INTO accounts " +
                                                 "(username, password, email, country, created_on, last_login) VALUES " +
                                                 "($1, $2, $3, $4, $5, $6);", conn)
@@ -45,10 +42,10 @@ public class DbUser
         Console.WriteLine(result);
     }
 
-    public static async Task<AccountModel> GetAccountDataById(int userId)
+    public static async Task<AccountDto> GetAccountDataById(int userId)
     {
-        var conn = DbGlobals.GetDatabaseConnection().Result;
-        var account = new AccountModel();
+        var conn = Globals.GetDatabaseConnection().Result;
+        var account = new AccountDto();
         
         await using var cmd = new NpgsqlCommand("SELECT * FROM accounts WHERE id = " + userId, conn);
         var dataReader = await cmd.ExecuteReaderAsync();
@@ -65,9 +62,9 @@ public class DbUser
         return account;
     }
 
-    public static void EditAccount(AccountModel settingsModel)
+    public static void EditAccount(AccountDto settingsModel)
     {
-        var conn = DbGlobals.GetDatabaseConnection().Result;
+        var conn = Globals.GetDatabaseConnection().Result;
         using var cmd = new NpgsqlCommand("UPDATE accounts SET username = $1, password = $2, " +
                                           "email = $3, country = $4 WHERE id = $5;", conn)
         {
@@ -86,7 +83,7 @@ public class DbUser
 
     private static void UpdateLastLogin(int userId)
     {
-        var conn = DbGlobals.GetDatabaseConnection().Result;
+        var conn = Globals.GetDatabaseConnection().Result;
         using var cmd = new NpgsqlCommand("UPDATE accounts SET last_login = $1 WHERE id = $2;", conn)
         {
             Parameters =

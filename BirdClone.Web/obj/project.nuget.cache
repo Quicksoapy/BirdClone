@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zX6ylUY3rzPa3MHPOj9H1X5sxb61eHDU+AeGS0L/xNJ77xxUsp4560yYeaUSLtIjuLzyssrlA+8TfElyd8QIpg==",
+  "dgSpecHash": "m/zo5oPdKPQpx+1K7dM5Vz3mCwd8auofiPdZOwLodvTD9/hDTgp4eWZhXWkAWyrx2fugF9cA1/8Y7J+cAdgiNQ==",
   "success": true,
-  "projectFilePath": "/home/maya/RiderProjects/BirdClone/BirdClone/BirdClone.csproj",
+  "projectFilePath": "/home/maya/RiderProjects/BirdClone/BirdClone.Web/BirdClone.Web.csproj",
   "expectedPackageFiles": [
     "/home/maya/.nuget/packages/microsoft.entityframeworkcore/7.0.3/microsoft.entityframeworkcore.7.0.3.nupkg.sha512",
     "/home/maya/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.3/microsoft.entityframeworkcore.abstractions.7.0.3.nupkg.sha512",

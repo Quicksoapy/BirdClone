@@ -1,17 +1,23 @@
-using BirdClone.Models;
+using BirdClone.Domain;
+using BirdClone.Domain.Messages;
 using Npgsql;
 
-namespace BirdClone.postgres;
+namespace BirdClone.Data.Messages;
 
-public class DbMessages
+public class MessageRepository : IMessageRepository
 {
-    private static readonly NpgsqlConnection Conn = DbGlobals.GetDatabaseConnection().Result;
+    private readonly string _connectionString;
+
+    public MessageRepository(string connectionString)
+    {
+        _connectionString = connectionString;
+    }
     
-    public static async void PostMessageHandler(MessageModel messageModel)
+    public static async void PostMessageHandler(MessageDto messageModel, NpgsqlConnection conn)
     {
         await using var cmd = new NpgsqlCommand("INSERT INTO messages " +
                                                 "(user_id, content, created_on) VALUES " +
-                                                "($1, $2, $3);", Conn)
+                                                "($1, $2, $3);", conn)
         {
             Parameters =
             {
@@ -24,16 +30,16 @@ public class DbMessages
         Console.WriteLine(result);
     }
     
-    public static async Task<List<MessageModel>> GetMessagesHandler()
+    public static async Task<IEnumerable<MessageDto>> GetMessagesHandler()
     {
-        var conn = DbGlobals.GetDatabaseConnection().Result;
-        var messageModels = new List<MessageModel>();
+        var conn = BirdClone.Globals.GetDatabaseConnection().Result;
+        var messageModels = new List<MessageDto>();
         
         await using var cmd = new NpgsqlCommand("SELECT messages.id, messages.content, messages.user_id, messages.created_on, accounts.username FROM messages JOIN accounts ON messages.user_id = accounts.id ORDER BY messages.created_on DESC", conn);
         var dataReader = await cmd.ExecuteReaderAsync();
         while (dataReader.Read())
         {
-            var model = new MessageModel
+            var model = new MessageDto
             {
                 Id = (uint)dataReader.GetInt64(dataReader.GetOrdinal("id")),
                 UserId = dataReader.GetInt32(dataReader.GetOrdinal("user_id")),
@@ -47,11 +53,11 @@ public class DbMessages
         return messageModels;
     }
 
-    public static async Task<List<MessageModel>> GetMessagesOfUserById(int userId)
+    public static async Task<IEnumerable<MessageDto>> GetMessagesOfUserById(int userId, NpgsqlConnection conn)
     {
-        var messageModels = new List<MessageModel>();
+        var messageModels = new List<MessageDto>();
         
-        await using var cmd = new NpgsqlCommand("SELECT * FROM messages WHERE user_id = @userId ORDER BY created_on DESC", Conn)
+        await using var cmd = new NpgsqlCommand("SELECT * FROM messages WHERE user_id = @userId ORDER BY created_on DESC", conn)
             {
                 Parameters = {
                     new NpgsqlParameter { ParameterName = "userId", Value = userId }
@@ -61,7 +67,7 @@ public class DbMessages
         var dataReader = await cmd.ExecuteReaderAsync();
         while (dataReader.Read())
         {
-            var model = new MessageModel
+            var model = new MessageDto
             {
                 Id = (uint)dataReader.GetInt64(dataReader.GetOrdinal("id")),
                 UserId = dataReader.GetInt32(dataReader.GetOrdinal("user_id")),

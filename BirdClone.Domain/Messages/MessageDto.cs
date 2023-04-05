@@ -1,6 +1,6 @@
-namespace BirdClone.Models;
+namespace BirdClone.Domain.Messages;
 
-public class MessageModel
+public class MessageDto
 {
     public UInt32 Id { get; set; }
     public int UserId { get; set; }

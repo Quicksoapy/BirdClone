@@ -1,6 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirdClone", "BirdClone\BirdClone.csproj", "{92DEE8EC-831E-47FA-A5A4-7F7EFEAA2DB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirdClone.Web", "BirdClone.Web\BirdClone.Web.csproj", "{92DEE8EC-831E-47FA-A5A4-7F7EFEAA2DB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirdClone.Data", "BirdClone.Data\BirdClone.Data.csproj", "{A3F93B10-6139-411D-863D-B735B687A3DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirdClone.Domain", "BirdClone.Domain\BirdClone.Domain.csproj", "{2601C05B-C598-4EDA-883F-9A896A2C395B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +16,13 @@ Global
 		{92DEE8EC-831E-47FA-A5A4-7F7EFEAA2DB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92DEE8EC-831E-47FA-A5A4-7F7EFEAA2DB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92DEE8EC-831E-47FA-A5A4-7F7EFEAA2DB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3F93B10-6139-411D-863D-B735B687A3DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3F93B10-6139-411D-863D-B735B687A3DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3F93B10-6139-411D-863D-B735B687A3DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3F93B10-6139-411D-863D-B735B687A3DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2601C05B-C598-4EDA-883F-9A896A2C395B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2601C05B-C598-4EDA-883F-9A896A2C395B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2601C05B-C598-4EDA-883F-9A896A2C395B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2601C05B-C598-4EDA-883F-9A896A2C395B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

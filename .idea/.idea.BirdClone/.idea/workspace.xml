@@ -7,11 +7,135 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/BirdClone.Data/Accounts/AccountRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone.Data/Messages/MessageRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone.Domain/Accounts/Account.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone.Domain/Accounts/AccountDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone.Domain/Accounts/AccountService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone.Domain/Database/DatabaseLogin.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone.Domain/IAccountRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone.Domain/IMessageRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone.Domain/Messages/Message.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone.Domain/Messages/MessageDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone.Domain/Messages/MessageService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone.Web/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone/postgres/DbMessages.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/postgres/DbMessages.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone.sln" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/BirdClone.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/BirdClone.Web.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Globals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Globals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Models/AccountModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Models/DatabaseLoginModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Models/MessageModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Models/RegisterModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Account.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Account.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Account.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Account.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Error.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Error.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Error.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Login.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Login.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Logout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Logout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Logout.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Logout.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Privacy.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Privacy.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Privacy.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Privacy.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Register.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Register.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Settings.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Settings.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Settings.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Settings.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Shared/_Layout.cshtml.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Shared/_Layout.cshtml.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Shared/_ValidationScriptsPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Shared/_ValidationScriptsPartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/_ViewImports.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/_ViewStart.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/_ViewStart.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/BirdClone.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/BirdClone.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/BirdClone.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/BirdClone.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/BirdClone.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/BirdClone.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.GlobalUsings.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.GlobalUsings.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.RazorAssemblyInfo.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.RazorAssemblyInfo.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.RazorAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.RazorAssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/project.packagespec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/postgres/DbGlobals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/Globals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/postgres/DbMessages.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/postgres/DbUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/postgres/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/postgres/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/js/site.js" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/js/site.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/jquery-validation/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/jquery-validation/LICENSE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/jquery-validation/dist/additional-methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/jquery-validation/dist/additional-methods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/jquery-validation/dist/additional-methods.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/jquery-validation/dist/additional-methods.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/jquery-validation/dist/jquery.validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/jquery-validation/dist/jquery.validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/jquery/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/jquery/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/jquery/dist/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/jquery/dist/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/jquery/dist/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/jquery/dist/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone/wwwroot/lib/jquery/dist/jquery.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/jquery/dist/jquery.min.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +152,15 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/441d103d8149d561cea0afccaaad79dd6f325fa44d78f954d43ba61e9b4cc76/ExecutorFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ea93d582c2debe8d7c89f3f4285f5130809d8b22e1f4c4d9634818087635/RazorPageOfT.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BirdClone.Web/DatabaseLogin.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BirdClone.Web/Globals.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BirdClone.Web/Pages/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BirdClone.Web/Pages/Index.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BirdClone.Web/Pages/Login.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BirdClone.Web/Pages/Login.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BirdClone.Web/Pages/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BirdClone.Web/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -40,30 +172,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;SolutionBuilderGeneralOptionsPage&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/maya/RiderProjects/ArchitectuurWeek7",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "SolutionBuilderGeneralOptionsPage",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/home/maya/.config/JetBrains/Rider2023.1/resharper-host/DecompilerCache&quot;,
-      &quot;/home/maya/.config/JetBrains/Rider2023.1/resharper-host/SourcesCache&quot;,
-      &quot;/home/maya/.local/share/Symbols/src&quot;
+    "rider.external.source.directories": [
+      "/home/maya/.config/JetBrains/Rider2023.1/resharper-host/DecompilerCache",
+      "/home/maya/.config/JetBrains/Rider2023.1/resharper-host/SourcesCache",
+      "/home/maya/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BirdClone: https">
     <configuration name="BirdClone: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BirdClone/BirdClone.csproj" />
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BirdClone.Web/BirdClone.Web.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
       <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -78,7 +211,7 @@
       </method>
     </configuration>
     <configuration name="BirdClone: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BirdClone/BirdClone.csproj" />
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BirdClone.Web/BirdClone.Web.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
       <option name="LAUNCH_PROFILE_NAME" value="http" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -93,7 +226,7 @@
       </method>
     </configuration>
     <configuration name="BirdClone: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BirdClone/BirdClone.csproj" />
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BirdClone.Web/BirdClone.Web.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
       <option name="LAUNCH_PROFILE_NAME" value="https" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -138,6 +271,7 @@
       <workItem from="1680093369134" duration="383000" />
       <workItem from="1680243951491" duration="2024000" />
       <workItem from="1680249690105" duration="1632000" />
+      <workItem from="1680717626740" duration="1812000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1677487782844</created>
@@ -174,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679660331696</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Always use seperate connection when loading messages, can't be static due to high frequency of use">
+      <created>1680685500988</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680685500988</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +341,8 @@
     <MESSAGE value="worked on db" />
     <MESSAGE value="user can now login, Id is saved in cookies (unsafe)" />
     <MESSAGE value="account page" />
-    <option name="LAST_COMMIT_MESSAGE" value="account page" />
+    <MESSAGE value="Always use seperate connection when loading messages, can't be static due to high frequency of use" />
+    <option name="LAST_COMMIT_MESSAGE" value="Always use seperate connection when loading messages, can't be static due to high frequency of use" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

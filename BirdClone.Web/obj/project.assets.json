@@ -640,11 +640,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/maya/RiderProjects/BirdClone/BirdClone/BirdClone.csproj",
-      "projectName": "BirdClone",
-      "projectPath": "/home/maya/RiderProjects/BirdClone/BirdClone/BirdClone.csproj",
+      "projectUniqueName": "/home/maya/RiderProjects/BirdClone/BirdClone.Web/BirdClone.Web.csproj",
+      "projectName": "BirdClone.Web",
+      "projectPath": "/home/maya/RiderProjects/BirdClone/BirdClone.Web/BirdClone.Web.csproj",
       "packagesPath": "/home/maya/.nuget/packages/",
-      "outputPath": "/home/maya/RiderProjects/BirdClone/BirdClone/obj/",
+      "outputPath": "/home/maya/RiderProjects/BirdClone/BirdClone.Web/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/maya/.nuget/NuGet/NuGet.Config"

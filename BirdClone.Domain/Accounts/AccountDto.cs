@@ -1,9 +1,6 @@
+namespace BirdClone.Domain.Accounts;
 
-using System.Net.Mime;
-
-namespace BirdClone.Models;
-
-public class AccountModel
+public class AccountDto
 {
     public int Id { get; set; }
     public string Username { get; set; } = "";

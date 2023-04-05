@@ -4,6 +4,7 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>BirdClone</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -11,6 +12,10 @@
       <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.3" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
       <PackageReference Include="Npgsql" Version="7.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Models" />
     </ItemGroup>
 
 </Project>
