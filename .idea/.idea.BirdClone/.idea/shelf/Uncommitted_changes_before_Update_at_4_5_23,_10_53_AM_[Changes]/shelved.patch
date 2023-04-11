@@ -1,0 +1,195 @@
+Index: BirdClone/Pages/Index.cshtml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@page\n@model IndexModel\n@{\n    ViewData[\"Title\"] = \"Home page\";\n}\n<body style=\"margin-bottom: 10px\">\n@if (!string.IsNullOrEmpty(Request.Cookies[\"UserId\"]) && Request.Cookies[\"UserId\"]  != \"0\")\n{\n    <div class=\"text-center\">\n        <h1 class=\"display-7\">Hi <a href=\"/Settings\">@Request.Cookies[\"Username\"]</a>!</h1>\n    </div>\n\n    <form method=\"post\">\n        <div class=\"form-group\">\n            <label>Message:</label>\n            <textarea class=\"form-control\" asp-for=\"MessageModel.Content\" rows=\"3\" maxlength=\"500\"></textarea>\n        </div>\n        <label style=\"color: darkgrey;\">Maximum 500 characters.</label>\n        <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n    </form>\n}\n\nelse\n{   \n    <div class=\"text-center\">\n        <h1 class=\"display-4\">Welcome</h1>\n    </div>\n}\n\n<div class=\"grid\">\n@foreach (var message in Model.Messages)\n{\n    <div class=\"card grid-item float-start\" style=\"width: 18rem; margin-right: 1rem; margin-top: 1rem;\">\n        <div class=\"card-body\">\n            <h5 class=\"card-title\"><a asp-page=\"/Account\" asp-route-id=\"@message.UserId\">@message.Username</a></h5>\n            <p class=\"card-text\">@message.Content</p>\n            <p class=\"card-text text-muted\">@message.CreatedOn.ToString(\"ddd, dd MMM yyyy H:mm:ss\")</p>\n        </div>\n    </div>\n}\n</div>\n</body>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/BirdClone/Pages/Index.cshtml b/BirdClone/Pages/Index.cshtml
+--- a/BirdClone/Pages/Index.cshtml	(revision 1d1dada3aac9069d611294231651918f2a94ae9b)
++++ b/BirdClone/Pages/Index.cshtml	(date 1680254691466)
+@@ -28,15 +28,33 @@
+ }
+ 
+ <div class="grid">
+-@foreach (var message in Model.Messages)
+-{
+-    <div class="card grid-item float-start" style="width: 18rem; margin-right: 1rem; margin-top: 1rem;">
+-        <div class="card-body">
+-            <h5 class="card-title"><a asp-page="/Account" asp-route-id="@message.UserId">@message.Username</a></h5>
+-            <p class="card-text">@message.Content</p>
+-            <p class="card-text text-muted">@message.CreatedOn.ToString("ddd, dd MMM yyyy H:mm:ss")</p>
+-        </div>
+-    </div>
+-}
++    @foreach (var message in Model.Messages)
++    {
++        <div class="card grid-item float-start" style="width: 18rem; margin-right: 1rem; margin-top: 1rem;">
++            <div class="card-body">
++                <h5 class="card-title"><a asp-page="/Account" asp-route-id="@message.UserId">@message.Username</a></h5>
++                <p class="card-text">@message.Content</p>
++                <p class="card-text text-muted">@message.CreatedOn.ToString("ddd, dd MMM yyyy H:mm:ss")</p>
++            </div>
++        </div>
++    }
+ </div>
++@if (!string.IsNullOrEmpty(Model.Request?.Cookies["UserId"]) && Model.Request.Cookies["UserId"] != "0")
++                    {
++                        <li class="nav-item">
++                            <a class="nav-link text-dark" asp-area="" asp-page="/Settings">Settings</a>
++                        </li>
++                        <li class="nav-item">
++                            <a class="nav-link text-dark" asp-area="" asp-page="/Logout">Logout</a>
++                        </li>
++                    }
++                    else
++                    {
++                        <li class="nav-item">
++                            <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
++                        </li>
++                        <li class="nav-item">
++                            <a class="nav-link text-dark" asp-area="" asp-page="/Register">Register</a>
++                        </li>
++                    }
+ </body>
+\ No newline at end of file
+Index: BirdClone/Pages/Shared/_Layout.cshtml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@using Microsoft.AspNetCore.Mvc.RazorPages\n@using Microsoft.AspNetCore.Mvc.TagHelpers\n\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\"/>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>\n    <title>@ViewData[\"Title\"] - BirdClone</title>\n    <link rel=\"stylesheet\" href=\"~/lib/bootstrap/dist/css/bootstrap.min.css\"/>\n    <link rel=\"stylesheet\" href=\"~/css/site.css\" asp-append-version=\"true\"/>\n    <link rel=\"stylesheet\" href=\"~/BirdClone.styles.css\" asp-append-version=\"true\"/>\n</head>\n<body>\n<header>\n    <nav class=\"navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3\">\n        <div class=\"container\">\n            <a class=\"navbar-brand\" asp-area=\"\" asp-page=\"/Index\">BirdClone</a>\n            <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\".navbar-collapse\" aria-controls=\"navbarSupportedContent\"\n                    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n            <div class=\"navbar-collapse collapse d-sm-inline-flex justify-content-between\">\n                <ul class=\"navbar-nav flex-grow-1\">\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link text-dark\" asp-area=\"\" asp-page=\"/Index\">Home</a>\n                    </li>\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link text-dark\" asp-area=\"\" asp-page=\"/Privacy\">Privacy</a>\n                    </li>\n                    @if (!string.IsNullOrEmpty(Model.Request?.Cookies[\"UserId\"]) && Model.Request.Cookies[\"UserId\"] != \"0\")\n                    {\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link text-dark\" asp-area=\"\" asp-page=\"/Settings\">Settings</a>\n                        </li>\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link text-dark\" asp-area=\"\" asp-page=\"/Logout\">Logout</a>\n                        </li>\n                    }\n                    else\n                    {\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link text-dark\" asp-area=\"\" asp-page=\"/Login\">Login</a>\n                        </li>\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link text-dark\" asp-area=\"\" asp-page=\"/Register\">Register</a>\n                        </li>\n                    }\n                </ul>\n            </div>\n        </div>\n    </nav>\n</header>\n<div class=\"container mb-5\">\n    <main role=\"main\" class=\"pb-3\">\n        @RenderBody()\n    </main>\n</div>\n\n<footer class=\"border-top footer text-muted\" style=\"margin-top: 2rem;\">\n    <div class=\"container\">\n        &copy; 2023 - BirdClone - <a asp-area=\"\" asp-page=\"/Privacy\">Privacy</a>\n    </div>\n</footer>\n\n<script src=\"~/lib/jquery/dist/jquery.min.js\"></script>\n<script src=\"~/lib/bootstrap/dist/js/bootstrap.bundle.min.js\"></script>\n<script src=\"~/js/site.js\" asp-append-version=\"true\"></script>\n\n@await RenderSectionAsync(\"Scripts\", required: false)\n</body>\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/BirdClone/Pages/Shared/_Layout.cshtml b/BirdClone/Pages/Shared/_Layout.cshtml
+--- a/BirdClone/Pages/Shared/_Layout.cshtml	(revision 1d1dada3aac9069d611294231651918f2a94ae9b)
++++ b/BirdClone/Pages/Shared/_Layout.cshtml	(date 1680254696414)
+@@ -28,24 +28,7 @@
+                     <li class="nav-item">
+                         <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                     </li>
+-                    @if (!string.IsNullOrEmpty(Model.Request?.Cookies["UserId"]) && Model.Request.Cookies["UserId"] != "0")
+-                    {
+-                        <li class="nav-item">
+-                            <a class="nav-link text-dark" asp-area="" asp-page="/Settings">Settings</a>
+-                        </li>
+-                        <li class="nav-item">
+-                            <a class="nav-link text-dark" asp-area="" asp-page="/Logout">Logout</a>
+-                        </li>
+-                    }
+-                    else
+-                    {
+-                        <li class="nav-item">
+-                            <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
+-                        </li>
+-                        <li class="nav-item">
+-                            <a class="nav-link text-dark" asp-area="" asp-page="/Register">Register</a>
+-                        </li>
+-                    }
++                    
+                 </ul>
+             </div>
+         </div>
+Index: BirdClone/Program.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using Microsoft.EntityFrameworkCore;\n\nvar builder = WebApplication.CreateBuilder(args);\n\n// Add services to the container.\nbuilder.Services.AddRazorPages();\n\nvar app = builder.Build();\n\n// Configure the HTTP request pipeline.\nif (!app.Environment.IsDevelopment())\n{\n    app.UseExceptionHandler(\"/Error\");\n    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.\n    app.UseHsts();\n}\n\napp.UseHttpsRedirection();\napp.UseStaticFiles();\n\napp.UseRouting();\n\napp.UseAuthorization();\n\napp.MapRazorPages();\n\napp.Run();
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/BirdClone/Program.cs b/BirdClone/Program.cs
+--- a/BirdClone/Program.cs	(revision 1d1dada3aac9069d611294231651918f2a94ae9b)
++++ b/BirdClone/Program.cs	(date 1680254106832)
+@@ -24,4 +24,9 @@
+ 
+ app.MapRazorPages();
+ 
+-app.Run();
+\ No newline at end of file
++app.Run();
++
++//TODO 3 layer system (3 projects)
++//TODO look at interfaces
++
++//TODO unit tests?
+\ No newline at end of file
+Index: .idea/.idea.BirdClone/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoGeneratedRunConfigurationManager\">\n    <projectFile profileName=\"IIS Express\">BirdClone/BirdClone.csproj</projectFile>\n    <projectFile profileName=\"http\">BirdClone/BirdClone.csproj</projectFile>\n    <projectFile profileName=\"https\">BirdClone/BirdClone.csproj</projectFile>\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/BirdClone/Models/DatabaseLoginModel.cs\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/BirdClone/Pages/Logout.cshtml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/BirdClone/Pages/Logout.cshtml.cs\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/BirdClone/postgres/DbGlobals.cs\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/BirdClone/postgres/DbMessages.cs\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/BirdClone/postgres/DbUser.cs\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/BirdClone/Pages/Account.cshtml.cs\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/BirdClone/Pages/Account.cshtml.cs\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/BirdClone/Pages/Index.cshtml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/BirdClone/Pages/Index.cshtml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/BirdClone/Pages/Index.cshtml.cs\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/BirdClone/Pages/Index.cshtml.cs\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/BirdClone/Pages/Login.cshtml.cs\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/BirdClone/Pages/Login.cshtml.cs\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/BirdClone/Pages/Register.cshtml.cs\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/BirdClone/Pages/Register.cshtml.cs\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/BirdClone/Pages/Settings.cshtml.cs\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/BirdClone/Pages/Settings.cshtml.cs\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/BirdClone/Pages/Shared/_Layout.cshtml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/BirdClone/Pages/Shared/_Layout.cshtml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.GeneratedMSBuildEditorConfig.editorconfig\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.GeneratedMSBuildEditorConfig.editorconfig\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.csproj.AssemblyReference.cache\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.csproj.AssemblyReference.cache\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/BirdClone/obj/rider.project.restore.info\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/BirdClone/obj/rider.project.restore.info\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/BirdClone/postgres/DatabaseHandling.cs\" beforeDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"JSON File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"HighlightingSettingsPerFile\">\n    <setting file=\"file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/441d103d8149d561cea0afccaaad79dd6f325fa44d78f954d43ba61e9b4cc76/ExecutorFactory.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ea93d582c2debe8d7c89f3f4285f5130809d8b22e1f4c4d9634818087635/RazorPageOfT.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"MetaFilesCheckinStateConfiguration\" checkMetaFiles=\"true\" />\n  <component name=\"ProjectId\" id=\"2MJZWJDtfufXgNb9GabLm59RZzd\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;SolutionBuilderGeneralOptionsPage&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  },\n  &quot;keyToStringList&quot;: {\n    &quot;DatabaseDriversLRU&quot;: [\n      &quot;postgresql&quot;\n    ],\n    &quot;rider.external.source.directories&quot;: [\n      &quot;/home/maya/.config/JetBrains/Rider2023.1/resharper-host/DecompilerCache&quot;,\n      &quot;/home/maya/.config/JetBrains/Rider2023.1/resharper-host/SourcesCache&quot;,\n      &quot;/home/maya/.local/share/Symbols/src&quot;\n    ]\n  }\n}</component>\n  <component name=\"RunManager\" selected=\".NET Launch Settings Profile.BirdClone: https\">\n    <configuration name=\"BirdClone: IIS Express\" type=\"LaunchSettings\" factoryName=\".NET Launch Settings Profile\">\n      <option name=\"LAUNCH_PROFILE_PROJECT_FILE_PATH\" value=\"$PROJECT_DIR$/BirdClone/BirdClone.csproj\" />\n      <option name=\"LAUNCH_PROFILE_TFM\" value=\"net7.0\" />\n      <option name=\"LAUNCH_PROFILE_NAME\" value=\"IIS Express\" />\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\n      <option name=\"USE_MONO\" value=\"0\" />\n      <option name=\"RUNTIME_ARGUMENTS\" value=\"\" />\n      <option name=\"GENERATE_APPLICATIONHOST_CONFIG\" value=\"1\" />\n      <option name=\"SHOW_IIS_EXPRESS_OUTPUT\" value=\"0\" />\n      <option name=\"SEND_DEBUG_REQUEST\" value=\"1\" />\n      <option name=\"ADDITIONAL_IIS_EXPRESS_ARGUMENTS\" value=\"\" />\n      <method v=\"2\">\n        <option name=\"Build\" />\n      </method>\n    </configuration>\n    <configuration name=\"BirdClone: http\" type=\"LaunchSettings\" factoryName=\".NET Launch Settings Profile\">\n      <option name=\"LAUNCH_PROFILE_PROJECT_FILE_PATH\" value=\"$PROJECT_DIR$/BirdClone/BirdClone.csproj\" />\n      <option name=\"LAUNCH_PROFILE_TFM\" value=\"net7.0\" />\n      <option name=\"LAUNCH_PROFILE_NAME\" value=\"http\" />\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\n      <option name=\"USE_MONO\" value=\"0\" />\n      <option name=\"RUNTIME_ARGUMENTS\" value=\"\" />\n      <option name=\"GENERATE_APPLICATIONHOST_CONFIG\" value=\"1\" />\n      <option name=\"SHOW_IIS_EXPRESS_OUTPUT\" value=\"0\" />\n      <option name=\"SEND_DEBUG_REQUEST\" value=\"1\" />\n      <option name=\"ADDITIONAL_IIS_EXPRESS_ARGUMENTS\" value=\"\" />\n      <method v=\"2\">\n        <option name=\"Build\" />\n      </method>\n    </configuration>\n    <configuration name=\"BirdClone: https\" type=\"LaunchSettings\" factoryName=\".NET Launch Settings Profile\">\n      <option name=\"LAUNCH_PROFILE_PROJECT_FILE_PATH\" value=\"$PROJECT_DIR$/BirdClone/BirdClone.csproj\" />\n      <option name=\"LAUNCH_PROFILE_TFM\" value=\"net7.0\" />\n      <option name=\"LAUNCH_PROFILE_NAME\" value=\"https\" />\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\n      <option name=\"USE_MONO\" value=\"0\" />\n      <option name=\"RUNTIME_ARGUMENTS\" value=\"\" />\n      <option name=\"GENERATE_APPLICATIONHOST_CONFIG\" value=\"1\" />\n      <option name=\"SHOW_IIS_EXPRESS_OUTPUT\" value=\"0\" />\n      <option name=\"SEND_DEBUG_REQUEST\" value=\"1\" />\n      <option name=\"ADDITIONAL_IIS_EXPRESS_ARGUMENTS\" value=\"\" />\n      <method v=\"2\">\n        <option name=\"Build\" />\n      </method>\n    </configuration>\n    <list>\n      <item itemvalue=\".NET Launch Settings Profile.BirdClone: http\" />\n      <item itemvalue=\".NET Launch Settings Profile.BirdClone: https\" />\n      <item itemvalue=\".NET Launch Settings Profile.BirdClone: IIS Express\" />\n    </list>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed\" name=\"Changes\" comment=\"\" />\n      <created>1677487676795</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1677487676795</updated>\n      <workItem from=\"1677487684084\" duration=\"2494000\" />\n      <workItem from=\"1677507767995\" duration=\"1241000\" />\n      <workItem from=\"1677953754300\" duration=\"5714000\" />\n      <workItem from=\"1678004795725\" duration=\"1409000\" />\n      <workItem from=\"1678352555193\" duration=\"3009000\" />\n      <workItem from=\"1678782632949\" duration=\"1926000\" />\n      <workItem from=\"1678867797638\" duration=\"814000\" />\n      <workItem from=\"1678882420099\" duration=\"5094000\" />\n      <workItem from=\"1679314943499\" duration=\"4915000\" />\n      <workItem from=\"1679660323365\" duration=\"27000\" />\n      <workItem from=\"1679695996213\" duration=\"80000\" />\n      <workItem from=\"1679899778789\" duration=\"8302000\" />\n      <workItem from=\"1679922856122\" duration=\"6082000\" />\n      <workItem from=\"1680076883957\" duration=\"3393000\" />\n      <workItem from=\"1680093369134\" duration=\"383000\" />\n      <workItem from=\"1680243951491\" duration=\"2024000\" />\n      <workItem from=\"1680249690105\" duration=\"1632000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Initial Commit\">\n      <created>1677487782844</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1677487782844</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"worked on database handling, set db up\">\n      <created>1677779856822</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1677779856822</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"worked on db\">\n      <created>1677969457103</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1677969457103</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"user can now login, Id is saved in cookies (unsafe)\">\n      <created>1678886015254</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678886015254</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"account page\">\n      <created>1679660331696</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679660331696</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"6\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"UnityCheckinConfiguration\" checkUnsavedScenes=\"true\" />\n  <component name=\"UnityUnitTestConfiguration\" currentTestLauncher=\"NUnit\" />\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"CLEAR_INITIAL_COMMIT_MESSAGE\" value=\"true\" />\n    <MESSAGE value=\"Initial Commit\" />\n    <MESSAGE value=\"worked on database handling, set db up\" />\n    <MESSAGE value=\"worked on db\" />\n    <MESSAGE value=\"user can now login, Id is saved in cookies (unsafe)\" />\n    <MESSAGE value=\"account page\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"account page\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <pin-to-top-manager>\n      <pinned-members>\n        <PinnedItemInfo parentTag=\"Frame#BirdClone.postgres.DatabaseHandling.RegisterHandler\" memberName=\"result\" />\n      </pinned-members>\n    </pin-to-top-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.idea.BirdClone/.idea/workspace.xml b/.idea/.idea.BirdClone/.idea/workspace.xml
+--- a/.idea/.idea.BirdClone/.idea/workspace.xml	(revision 1d1dada3aac9069d611294231651918f2a94ae9b)
++++ b/.idea/.idea.BirdClone/.idea/workspace.xml	(date 1680684690882)
+@@ -7,24 +7,10 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/BirdClone/Models/DatabaseLoginModel.cs" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/BirdClone/Pages/Logout.cshtml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/BirdClone/Pages/Logout.cshtml.cs" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/BirdClone/postgres/DbGlobals.cs" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/BirdClone/postgres/DbMessages.cs" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/BirdClone/postgres/DbUser.cs" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Account.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Account.cshtml.cs" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Index.cshtml.cs" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Login.cshtml.cs" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Register.cshtml.cs" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Settings.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Settings.cshtml.cs" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/BirdClone/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Pages/Shared/_Layout.cshtml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/Debug/net7.0/BirdClone.csproj.AssemblyReference.cache" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/BirdClone/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/obj/rider.project.restore.info" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/BirdClone/postgres/DatabaseHandling.cs" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/BirdClone/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone/Program.cs" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -59,6 +45,7 @@
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;last_opened_file_path&quot;: &quot;/home/maya/Downloads/ArchitectuurWeek7/ArchitectuurWeek7.sln&quot;,
+     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+     &quot;settings.editor.selected.configurable&quot;: &quot;SolutionBuilderGeneralOptionsPage&quot;,
+     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+@@ -150,7 +137,9 @@
+       <workItem from="1680076883957" duration="3393000" />
+       <workItem from="1680093369134" duration="383000" />
+       <workItem from="1680243951491" duration="2024000" />
+-      <workItem from="1680249690105" duration="1632000" />
++      <workItem from="1680249690105" duration="1731000" />
++      <workItem from="1680253448581" duration="1248000" />
++      <workItem from="1680516411502" duration="599000" />
+     </task>
+     <task id="LOCAL-00001" summary="Initial Commit">
+       <created>1677487782844</created>
+@@ -187,7 +176,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1679660331696</updated>
+     </task>
+-    <option name="localTasksCounter" value="6" />
++    <task id="LOCAL-00006" summary="DatabaseHandling.cs -&gt; multiple different classes">
++      <created>1680251460527</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1680251460527</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -213,7 +209,8 @@
+     <MESSAGE value="worked on db" />
+     <MESSAGE value="user can now login, Id is saved in cookies (unsafe)" />
+     <MESSAGE value="account page" />
+-    <option name="LAST_COMMIT_MESSAGE" value="account page" />
++    <MESSAGE value="DatabaseHandling.cs -&gt; multiple different classes" />
++    <option name="LAST_COMMIT_MESSAGE" value="DatabaseHandling.cs -&gt; multiple different classes" />
+   </component>
+   <component name="XDebuggerManager">
+     <pin-to-top-manager>
