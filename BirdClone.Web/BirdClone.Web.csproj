@@ -15,7 +15,13 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Models" />
+      <Compile Update="Pages\AccountPagecshtml.cs">
+        <DependentUpon>AccountPage..cshtml</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BirdClone.Domain\BirdClone.Domain.csproj" />
     </ItemGroup>
 
 </Project>

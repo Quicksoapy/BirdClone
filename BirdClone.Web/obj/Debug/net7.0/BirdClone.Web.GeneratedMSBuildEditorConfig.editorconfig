@@ -16,8 +16,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /home/maya/RiderProjects/BirdClone/BirdClone.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[/home/maya/RiderProjects/BirdClone/BirdClone.Web/Pages/Account.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC5jc2h0bWw=
+[/home/maya/RiderProjects/BirdClone/BirdClone.Web/Pages/AccountPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudFBhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/maya/RiderProjects/BirdClone/BirdClone.Web/Pages/Error.cshtml]

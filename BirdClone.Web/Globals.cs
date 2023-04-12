@@ -36,4 +36,13 @@ public class Globals
         await conn.OpenAsync();
         return conn;
     }
+    
+    public class DatabaseLogin
+    {
+        public string server { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public string database { get; set; }
+        public string port { get; set; }
+    }
 }

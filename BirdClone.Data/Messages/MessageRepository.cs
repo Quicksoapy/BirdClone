@@ -79,4 +79,19 @@ public class MessageRepository : IMessageRepository
 
         return messageModels;
     }
+
+    void IMessageRepository.PostMessageHandler(MessageDto messageModel, NpgsqlConnection conn)
+    {
+        PostMessageHandler(messageModel, conn);
+    }
+
+    public Task<IEnumerable<MessageDto>> GetMessagesHandler(NpgsqlConnection conn)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task<IEnumerable<MessageDto>> IMessageRepository.GetMessagesOfUserById(int userId, NpgsqlConnection conn)
+    {
+        return GetMessagesOfUserById(userId, conn);
+    }
 }

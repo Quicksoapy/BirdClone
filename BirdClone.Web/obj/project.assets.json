@@ -242,6 +242,16 @@
             "related": ".xml"
           }
         }
+      },
+      "BirdClone.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/BirdClone.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BirdClone.Domain.dll": {}
+        }
       }
     }
   },
@@ -624,10 +634,16 @@
         "npgsql.nuspec",
         "postgresql.png"
       ]
+    },
+    "BirdClone.Domain/1.0.0": {
+      "type": "project",
+      "path": "../BirdClone.Domain/BirdClone.Domain.csproj",
+      "msbuildProject": "../BirdClone.Domain/BirdClone.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "BirdClone.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.3",
       "Microsoft.EntityFrameworkCore.InMemory >= 7.0.3",
       "Newtonsoft.Json >= 13.0.2",
@@ -658,7 +674,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/maya/RiderProjects/BirdClone/BirdClone.Domain/BirdClone.Domain.csproj": {
+              "projectPath": "/home/maya/RiderProjects/BirdClone/BirdClone.Domain/BirdClone.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

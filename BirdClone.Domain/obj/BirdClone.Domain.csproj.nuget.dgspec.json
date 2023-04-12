@@ -25,73 +25,6 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {
-              "/home/maya/RiderProjects/BirdClone/BirdClone.Web/BirdClone.Web.csproj": {
-                "projectPath": "/home/maya/RiderProjects/BirdClone/BirdClone.Web/BirdClone.Web.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.2, 7.0.2]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.2, 7.0.2]"
-            }
-          ],
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "/home/maya/RiderProjects/BirdClone/BirdClone.Web/BirdClone.Web.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/home/maya/RiderProjects/BirdClone/BirdClone.Web/BirdClone.Web.csproj",
-        "projectName": "BirdClone.Web",
-        "projectPath": "/home/maya/RiderProjects/BirdClone/BirdClone.Web/BirdClone.Web.csproj",
-        "packagesPath": "/home/maya/.nuget/packages/",
-        "outputPath": "/home/maya/RiderProjects/BirdClone/BirdClone.Web/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/home/maya/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net7.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -104,24 +37,6 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[7.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.InMemory": {
-              "target": "Package",
-              "version": "[7.0.3, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.2, )"
-            },
-            "Npgsql": {
-              "target": "Package",
-              "version": "[7.0.2, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -139,18 +54,11 @@
               "version": "[7.0.2, 7.0.2]"
             },
             {
-              "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[7.0.2, 7.0.2]"
-            },
-            {
               "name": "Microsoft.NETCore.App.Ref",
               "version": "[7.0.2, 7.0.2]"
             }
           ],
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
