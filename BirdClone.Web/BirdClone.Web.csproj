@@ -21,6 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\BirdClone.Data\BirdClone.Data.csproj" />
       <ProjectReference Include="..\BirdClone.Domain\BirdClone.Domain.csproj" />
     </ItemGroup>
 

@@ -243,6 +243,19 @@
           }
         }
       },
+      "BirdClone.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "BirdClone.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BirdClone.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BirdClone.Data.dll": {}
+        }
+      },
       "BirdClone.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -635,6 +648,11 @@
         "postgresql.png"
       ]
     },
+    "BirdClone.Data/1.0.0": {
+      "type": "project",
+      "path": "../BirdClone.Data/BirdClone.Data.csproj",
+      "msbuildProject": "../BirdClone.Data/BirdClone.Data.csproj"
+    },
     "BirdClone.Domain/1.0.0": {
       "type": "project",
       "path": "../BirdClone.Domain/BirdClone.Domain.csproj",
@@ -643,6 +661,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "BirdClone.Data >= 1.0.0",
       "BirdClone.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.3",
       "Microsoft.EntityFrameworkCore.InMemory >= 7.0.3",
@@ -675,6 +694,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "/home/maya/RiderProjects/BirdClone/BirdClone.Data/BirdClone.Data.csproj": {
+              "projectPath": "/home/maya/RiderProjects/BirdClone/BirdClone.Data/BirdClone.Data.csproj"
+            },
             "/home/maya/RiderProjects/BirdClone/BirdClone.Domain/BirdClone.Domain.csproj": {
               "projectPath": "/home/maya/RiderProjects/BirdClone/BirdClone.Domain/BirdClone.Domain.csproj"
             }

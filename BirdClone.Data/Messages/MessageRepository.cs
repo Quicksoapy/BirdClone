@@ -13,11 +13,11 @@ public class MessageRepository : IMessageRepository
         _connectionString = connectionString;
     }
     
-    public static async void PostMessageHandler(MessageDto messageModel, NpgsqlConnection conn)
+    public async void PostMessageHandler(MessageDto messageModel)
     {
         await using var cmd = new NpgsqlCommand("INSERT INTO messages " +
                                                 "(user_id, content, created_on) VALUES " +
-                                                "($1, $2, $3);", conn)
+                                                "($1, $2, $3);", new NpgsqlConnection(_connectionString))
         {
             Parameters =
             {
@@ -29,13 +29,12 @@ public class MessageRepository : IMessageRepository
         var result = await cmd.ExecuteNonQueryAsync();
         Console.WriteLine(result);
     }
-    
-    public static async Task<IEnumerable<MessageDto>> GetMessagesHandler()
+
+    public async Task<IEnumerable<MessageDto>> GetMessagesHandler()
     {
-        var conn = BirdClone.Globals.GetDatabaseConnection().Result;
         var messageModels = new List<MessageDto>();
         
-        await using var cmd = new NpgsqlCommand("SELECT messages.id, messages.content, messages.user_id, messages.created_on, accounts.username FROM messages JOIN accounts ON messages.user_id = accounts.id ORDER BY messages.created_on DESC", conn);
+        await using var cmd = new NpgsqlCommand("SELECT messages.id, messages.content, messages.user_id, messages.created_on, accounts.username FROM messages JOIN accounts ON messages.user_id = accounts.id ORDER BY messages.created_on DESC", new NpgsqlConnection(_connectionString));
         var dataReader = await cmd.ExecuteReaderAsync();
         while (dataReader.Read())
         {
@@ -53,11 +52,11 @@ public class MessageRepository : IMessageRepository
         return messageModels;
     }
 
-    public static async Task<IEnumerable<MessageDto>> GetMessagesOfUserById(int userId, NpgsqlConnection conn)
+    public async Task<IEnumerable<MessageDto>> GetMessagesOfUserById(int userId)
     {
         var messageModels = new List<MessageDto>();
         
-        await using var cmd = new NpgsqlCommand("SELECT * FROM messages WHERE user_id = @userId ORDER BY created_on DESC", conn)
+        await using var cmd = new NpgsqlCommand("SELECT * FROM messages WHERE user_id = @userId ORDER BY created_on DESC", new NpgsqlConnection(_connectionString))
             {
                 Parameters = {
                     new NpgsqlParameter { ParameterName = "userId", Value = userId }
@@ -78,20 +77,5 @@ public class MessageRepository : IMessageRepository
         }
 
         return messageModels;
-    }
-
-    void IMessageRepository.PostMessageHandler(MessageDto messageModel, NpgsqlConnection conn)
-    {
-        PostMessageHandler(messageModel, conn);
-    }
-
-    public Task<IEnumerable<MessageDto>> GetMessagesHandler(NpgsqlConnection conn)
-    {
-        throw new NotImplementedException();
-    }
-
-    Task<IEnumerable<MessageDto>> IMessageRepository.GetMessagesOfUserById(int userId, NpgsqlConnection conn)
-    {
-        return GetMessagesOfUserById(userId, conn);
     }
 }

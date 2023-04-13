@@ -7,39 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/dataSources/764ff30d-fdff-487f-902b-b72e165fdfb4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/dataSources/764ff30d-fdff-487f-902b-b72e165fdfb4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_23,_10_53_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_23__10_53_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Data/Accounts/AccountRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/Accounts/AccountRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Data/Messages/MessageRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/Messages/MessageRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/BirdClone.Data.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/BirdClone.Data.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/BirdClone.Data.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/BirdClone.Data.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/BirdClone.Data.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/BirdClone.Data.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/Debug/net7.0/BirdClone.Data.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/Debug/net7.0/BirdClone.Data.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/Debug/net7.0/BirdClone.Data.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/Debug/net7.0/BirdClone.Data.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/BirdClone.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/BirdClone.Domain.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/Database/DatabaseLogin.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/Accounts/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/Accounts/AccountService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Domain/IAccountRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/IAccountRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Domain/IMessageRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/IMessageRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Domain/Messages/MessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/Messages/MessageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/BirdClone.Domain.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/BirdClone.Domain.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/BirdClone.Domain.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/BirdClone.Domain.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/BirdClone.Domain.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/BirdClone.Domain.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/Debug/net7.0/BirdClone.Domain.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/Debug/net7.0/BirdClone.Domain.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/Debug/net7.0/BirdClone.Domain.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/Debug/net7.0/BirdClone.Domain.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Web/BirdClone.Web.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/BirdClone.Web.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Globals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Globals.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/AccountPage.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/AccountPage.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone.Web/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/BirdClone.Web.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/BirdClone.Web.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.Web.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.Web.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/project.packagespec.json" afterDir="false" />
@@ -180,6 +158,7 @@
       <workItem from="1680717626740" duration="1812000" />
       <workItem from="1681301126069" duration="3266000" />
       <workItem from="1681304411968" duration="989000" />
+      <workItem from="1681375633483" duration="2990000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1677487782844</created>

@@ -1,39 +1,51 @@
-﻿using BirdClone.Models;
-using BirdClone.postgres;
+﻿using BirdClone.Data.Accounts;
+using BirdClone.Data.Messages;
+using BirdClone.Domain.Accounts;
+using BirdClone.Domain.Messages;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Npgsql;
 
 namespace BirdClone.Pages;
 
 public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> _logger;
-
+    private MessageService _messageService;
+    private AccountService _accountService;
+    
     public IndexModel(ILogger<IndexModel> logger)
     {
         _logger = logger;
     }
     
-    [BindProperty] public MessageModel MessageModel { get; set; }
+    [BindProperty] public Message MessageModel { get; set; }
     
-    [BindProperty] public List<MessageModel> Messages { get; set; }
+    [BindProperty] public IEnumerable<Message> Messages { get; set; }
 
-    public void OnGet()
+    public void OnGet(IConfiguration configuration)
     {
-        Messages = DbMessages.GetMessagesHandler().Result;
+        var connection = new NpgsqlConnection(configuration.GetConnectionString("SqlServer"));
+        _messageService = new MessageService(new MessageRepository(connection.ToString()));
+        _accountService = new AccountService(new AccountRepository(connection.ToString()));
+        Messages = _messageService.GetAllMessages();
+        
         if (string.IsNullOrEmpty(Request.Cookies["UserId"])) return;
-        var account = DbUser.GetAccountDataById(Convert.ToInt32(Request.Cookies["UserId"])).Result;
+        var account = _accountService.GetAccountDataById(Convert.ToInt32(Request.Cookies["UserId"]));
         Response.Cookies.Append("Username", account.Username);
     }
 
-    public void OnPost()
+    public void OnPost(IConfiguration configuration)
     {
+        var connection = new NpgsqlConnection(configuration.GetConnectionString("SqlServer"));
+        _messageService = new MessageService(new MessageRepository(connection.ToString()));
+
         MessageModel.CreatedOn = DateTime.UtcNow;
         MessageModel.UserId = Convert.ToInt32(Request.Cookies["UserId"]);
-        DbMessages.PostMessageHandler(MessageModel);
+        _messageService.PostMessageHandler(MessageModel);
         
-        OnGet();
+        OnGet(configuration);
     }
 }
 //TODO look at flexbox, css-grid, bootstrap column rows for nicer mosaic style messages
