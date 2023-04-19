@@ -29,7 +29,7 @@ public class AccountRepository : IAccountRepository
         return resultInt32;
     }
 
-    public Task RegisterHandler(Account account)
+    public Task RegisterHandler(AccountDto accountDto)
     {
         throw new NotImplementedException();
     }
@@ -53,13 +53,36 @@ public class AccountRepository : IAccountRepository
         return account;
     }
 
-    public Task EditAccount(Account account)
+    public Task EditAccount(AccountDto account)
     {
-        throw new NotImplementedException();
+        using var cmd = new NpgsqlCommand("UPDATE accounts SET username = $1, password = $2, " +
+                                          "email = $3, country = $4 WHERE id = $5;", new NpgsqlConnection(_connectionString))
+        {
+            Parameters =
+            {
+                new NpgsqlParameter { Value = account.Username },
+                new NpgsqlParameter { Value = account.Password },
+                new NpgsqlParameter { Value = account.Email },
+                new NpgsqlParameter { Value = account.Country },
+                new NpgsqlParameter { Value = account.Id}
+            }
+        };
+        var result = cmd.ExecuteNonQueryAsync().Result;
+        Console.WriteLine(result);
+        return Task.CompletedTask;
     }
 
     public void UpdateLastLogin(int userId)
     {
-        throw new NotImplementedException();
+        using var cmd = new NpgsqlCommand("UPDATE accounts SET last_login = $1 WHERE id = $2;", new NpgsqlConnection(_connectionString))
+        {
+            Parameters =
+            {
+                new NpgsqlParameter { Value = DateTime.UtcNow },
+                new NpgsqlParameter { Value = userId }
+            }
+        };
+        var result = cmd.ExecuteNonQueryAsync().Result;
+        Console.WriteLine(result);
     }
 }

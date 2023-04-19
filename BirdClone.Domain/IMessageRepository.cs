@@ -5,7 +5,7 @@ namespace BirdClone.Domain;
 
 public interface IMessageRepository
 {
-    void PostMessageHandler(MessageDto messageModel);
+    Task<int> PostMessageHandler(MessageDto messageModel);
 
     Task<IEnumerable<MessageDto>> GetMessagesHandler();
 

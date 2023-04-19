@@ -24,15 +24,18 @@ public class IndexModel : PageModel
     
     [BindProperty] public IEnumerable<Message> Messages { get; set; }
 
-    public void OnGet(IConfiguration configuration)
+    public void OnGet()
     {
+        IConfigurationRoot configuration = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json")
+            .Build();
         var connection = new NpgsqlConnection(configuration.GetConnectionString("SqlServer"));
         _messageService = new MessageService(new MessageRepository(connection.ToString()));
         _accountService = new AccountService(new AccountRepository(connection.ToString()));
         Messages = _messageService.GetAllMessages();
         
         if (string.IsNullOrEmpty(Request.Cookies["UserId"])) return;
-        var account = _accountService.GetAccountDataById(Convert.ToInt32(Request.Cookies["UserId"]));
+        var account = _accountService.GetAccountDataById(Convert.ToInt32(Request.Cookies["UserId"])).Result;
         Response.Cookies.Append("Username", account.Username);
     }
 
@@ -43,9 +46,9 @@ public class IndexModel : PageModel
 
         MessageModel.CreatedOn = DateTime.UtcNow;
         MessageModel.UserId = Convert.ToInt32(Request.Cookies["UserId"]);
-        _messageService.PostMessageHandler(MessageModel);
+        _messageService.PostMessage(MessageModel);
         
-        OnGet(configuration);
+        OnGet();
     }
 }
 //TODO look at flexbox, css-grid, bootstrap column rows for nicer mosaic style messages

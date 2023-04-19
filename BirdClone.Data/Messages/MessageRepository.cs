@@ -13,7 +13,7 @@ public class MessageRepository : IMessageRepository
         _connectionString = connectionString;
     }
     
-    public async void PostMessageHandler(MessageDto messageModel)
+    public async Task<int> PostMessageHandler(MessageDto messageModel)
     {
         await using var cmd = new NpgsqlCommand("INSERT INTO messages " +
                                                 "(user_id, content, created_on) VALUES " +
@@ -27,7 +27,7 @@ public class MessageRepository : IMessageRepository
             }
         };
         var result = await cmd.ExecuteNonQueryAsync();
-        Console.WriteLine(result);
+        return result;
     }
 
     public async Task<IEnumerable<MessageDto>> GetMessagesHandler()

@@ -11,25 +11,51 @@ public class AccountService
         _accountRepository = accountRepository;
     }
 
+    public void Edit(Account account)
+    {
+        var accountDto = new AccountDto
+        {
+            Username = account.Username,
+            Email = account.Email,
+            Password = account.Password,
+            Bio = account.Bio,
+            Country = account.Country,
+            ProfilePicture = account.ProfilePicture
+        };
+        _accountRepository.EditAccount(accountDto);
+    }
+    
+    public void Register(Account account)
+    {
+        var accountDto = new AccountDto
+        {
+            Username = account.Username,
+            Email = account.Email,
+            Password = account.Password,
+            CreatedOn = DateTime.UtcNow,
+            LastLogin = DateTime.UtcNow
+        };
+        _accountRepository.RegisterHandler(accountDto);
+    }
     public int Login(string username, string password)
     {
         return _accountRepository.LoginHandler(username, password).Result;
     }
 
-    public Account GetAccountDataById(int id)
+    public async Task<Account> GetAccountDataById(int id)
     {
-        var accountDto = _accountRepository.GetAccountDataById(id);
+        var accountDto = await _accountRepository.GetAccountDataById(id);
         
         Account account = new()
         {
-            Id = accountDto.Result.Id,
-            Username = accountDto.Result.Username,
-            Bio = accountDto.Result.Bio,
-            Country = accountDto.Result.Country,
-            CreatedOn = accountDto.Result.CreatedOn,
-            Email = accountDto.Result.Email,
-            LastLogin = accountDto.Result.LastLogin,
-            ProfilePicture = accountDto.Result.ProfilePicture
+            Id = accountDto.Id,
+            Username = accountDto.Username,
+            Bio = accountDto.Bio,
+            Country = accountDto.Country,
+            CreatedOn = accountDto.CreatedOn,
+            Email = accountDto.Email,
+            LastLogin = accountDto.LastLogin,
+            ProfilePicture = accountDto.ProfilePicture
         };
         return account;
     }

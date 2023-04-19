@@ -1,5 +1,4 @@
-using System.Text;
-using BirdClone.postgres;
+using BirdClone.Domain.Accounts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -14,6 +13,7 @@ public class LoginModel
 
 public class Login : PageModel
 {
+    private AccountService _accountService;
     [BindProperty] public LoginModel LoginModel { get; set; }
 
     public bool LoginSuccess { get; set; } = true;
@@ -24,10 +24,8 @@ public class Login : PageModel
 
     public IActionResult? OnPost(string username, string password)
     {
-        var dbUser = new DbUser();
-        
         var hashedPassword = Globals.GetSha512(LoginModel.Password);
-        LoginModel.UserId = DbUser.LoginHandler(LoginModel.Username, hashedPassword).Result;
+        LoginModel.UserId = _accountService.Login(LoginModel.Username, hashedPassword);
         
         if (LoginModel.UserId == 0)
         {

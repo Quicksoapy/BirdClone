@@ -7,10 +7,10 @@ public interface IAccountRepository
 {
     Task<int> LoginHandler(string username, string password);
 
-    Task RegisterHandler(Account account);
+    Task RegisterHandler(AccountDto accountDto);
 
     Task<Account> GetAccountDataById(int userId);
-    Task EditAccount(Account account);
+    Task EditAccount(AccountDto account);
 
     void UpdateLastLogin(int userId);
 }

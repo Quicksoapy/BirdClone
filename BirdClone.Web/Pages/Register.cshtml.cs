@@ -1,7 +1,4 @@
-using System.Security.Cryptography;
-using System.Text;
-using BirdClone.Models;
-using BirdClone.postgres;
+using BirdClone.Domain.Accounts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -9,16 +6,15 @@ namespace BirdClone.Pages;
 
 public class Register : PageModel
 {
-    [BindProperty] public RegisterModel RegisterModel { get; set; }
+    private AccountService _accountService;
+    [BindProperty] public Account RegisterModel { get; set; }
 
     public bool IsLoggedIn { get; set; }
 
     public void OnPost()
     {
-        var dbUser = new DbUser();
-        
         RegisterModel.Password = Globals.GetSha512(RegisterModel.Password);
-        DbUser.RegisterHandler(RegisterModel);
+        _accountService.Register(RegisterModel);
 
         Redirect("/");
     }
