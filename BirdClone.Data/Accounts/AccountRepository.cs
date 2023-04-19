@@ -16,9 +16,12 @@ public class AccountRepository : IAccountRepository
 
     public async Task<int> LoginHandler(string username, string password)
     {
+        var conn = new NpgsqlConnection(_connectionString);
+        conn.Open();
+        
         await using var cmd =
             new NpgsqlCommand(
-                "SELECT Id FROM accounts WHERE username='" + username + "' AND password='" + password + "';", new NpgsqlConnection(_connectionString));
+                "SELECT Id FROM accounts WHERE username='" + username + "' AND password='" + password + "';", conn);
         var result = await cmd.ExecuteScalarAsync();
         
         var resultInt32 = Convert.ToInt32(result);
@@ -30,16 +33,36 @@ public class AccountRepository : IAccountRepository
         return resultInt32;
     }
 
-    public Task RegisterHandler(AccountDto accountDto)
+    public async Task RegisterHandler(AccountDto accountDto)
     {
-        throw new NotImplementedException();
+        var conn = new NpgsqlConnection(_connectionString);
+        conn.Open();
+        
+        await using var cmd = new NpgsqlCommand("INSERT INTO accounts " +
+                                                "(username, password, email, country, created_on, last_login) VALUES " +
+                                                "($1, $2, $3, $4, $5, $6);", conn)
+        {
+            Parameters =
+            {
+                new NpgsqlParameter { Value = accountDto.Username },
+                new NpgsqlParameter { Value = accountDto.Password },
+                new NpgsqlParameter { Value = accountDto.Email },
+                new NpgsqlParameter { Value = "" },
+                new NpgsqlParameter { Value = DateTime.UtcNow },
+                new NpgsqlParameter { Value = DateTime.UtcNow }
+            }
+        };
+        var result = await cmd.ExecuteNonQueryAsync();
+        Console.WriteLine(result);
     }
 
     public async Task<Account> GetAccountDataById(int userId)
     {
         var account = new Account();
+        var conn = new NpgsqlConnection(_connectionString);
+        conn.Open();
         
-        await using var cmd = new NpgsqlCommand("SELECT * FROM accounts WHERE id = " + userId, new NpgsqlConnection(_connectionString));
+        await using var cmd = new NpgsqlCommand("SELECT * FROM accounts WHERE id = " + userId, conn);
         var dataReader = await cmd.ExecuteReaderAsync();
         while (dataReader.Read())
         {
@@ -56,8 +79,11 @@ public class AccountRepository : IAccountRepository
 
     public Task EditAccount(AccountDto account)
     {
+        var conn = new NpgsqlConnection(_connectionString);
+        conn.Open();
+        
         using var cmd = new NpgsqlCommand("UPDATE accounts SET username = $1, password = $2, " +
-                                          "email = $3, country = $4 WHERE id = $5;", new NpgsqlConnection(_connectionString))
+                                          "email = $3, country = $4 WHERE id = $5;", conn)
         {
             Parameters =
             {
@@ -75,7 +101,10 @@ public class AccountRepository : IAccountRepository
 
     public void UpdateLastLogin(int userId)
     {
-        using var cmd = new NpgsqlCommand("UPDATE accounts SET last_login = $1 WHERE id = $2;", new NpgsqlConnection(_connectionString))
+        var conn = new NpgsqlConnection(_connectionString);
+        conn.Open();
+        
+        using var cmd = new NpgsqlCommand("UPDATE accounts SET last_login = $1 WHERE id = $2;", conn)
         {
             Parameters =
             {

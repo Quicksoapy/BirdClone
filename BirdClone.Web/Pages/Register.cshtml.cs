@@ -1,3 +1,4 @@
+using BirdClone.Data.Accounts;
 using BirdClone.Domain.Accounts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -13,6 +14,8 @@ public class Register : PageModel
 
     public void OnPost()
     {
+        _accountService = new AccountService(new AccountRepository());
+        
         RegisterModel.Password = Globals.GetSha512(RegisterModel.Password);
         _accountService.Register(RegisterModel);
 

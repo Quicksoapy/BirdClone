@@ -1,3 +1,4 @@
+using BirdClone.Data.Accounts;
 using BirdClone.Domain.Accounts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -24,6 +25,8 @@ public class Login : PageModel
 
     public IActionResult? OnPost(string username, string password)
     {
+        _accountService = new AccountService(new AccountRepository());
+        
         var hashedPassword = Globals.GetSha512(LoginModel.Password);
         LoginModel.UserId = _accountService.Login(LoginModel.Username, hashedPassword);
         

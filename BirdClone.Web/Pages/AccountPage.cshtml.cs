@@ -1,3 +1,5 @@
+using BirdClone.Data.Accounts;
+using BirdClone.Data.Messages;
 using BirdClone.Domain.Accounts;
 using BirdClone.Domain.Messages;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +15,9 @@ public class AccountPage : PageModel
     [BindProperty] public List<Message> MessagesByUser { get; set; }
     public void OnGet(int id)
     {
+        _accountService = new AccountService(new AccountRepository());
+        _messageService = new MessageService(new MessageRepository());
+        
         AccountModel = _accountService.GetAccountDataById(id).Result;
         MessagesByUser = _messageService.GetMessagesByUserId(id).Result;
     }

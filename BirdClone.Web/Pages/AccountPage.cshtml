@@ -22,7 +22,7 @@
 {
     <div class="card" style="width: 18rem; margin-right: 1rem; margin-top: 1rem; float: left;">
         <div class="card-body">
-            <h5 class="card-title"><a asp-page="/Account" asp-route-id="@message.UserId">@Model.AccountModel.Username</a></h5>
+            <h5 class="card-title"><a asp-page="/AccountPage" asp-route-id="@message.UserId">@Model.AccountModel.Username</a></h5>
             <p class="card-text">@message.Content</p>
             <p class="card-text text-muted">@message.CreatedOn.ToString("ddd, dd MMM yyyy H:mm:ss")</p>
         </div>

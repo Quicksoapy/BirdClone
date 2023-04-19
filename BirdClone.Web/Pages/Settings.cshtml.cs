@@ -1,3 +1,4 @@
+using BirdClone.Data.Accounts;
 using BirdClone.Domain.Accounts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -11,6 +12,8 @@ public class Settings : PageModel
     
     public void OnGet()
     {
+        _accountService = new AccountService(new AccountRepository());
+        
         var userId = Convert.ToInt32(Request.Cookies["UserId"]);
 
         SettingsModel = _accountService.GetAccountDataById(userId).Result;

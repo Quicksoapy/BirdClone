@@ -16,9 +16,12 @@ public class MessageRepository : IMessageRepository
     
     public async Task<int> PostMessageHandler(MessageDto messageModel)
     {
+        var conn = new NpgsqlConnection(_connectionString);
+        conn.Open();
+        
         await using var cmd = new NpgsqlCommand("INSERT INTO messages " +
                                                 "(user_id, content, created_on) VALUES " +
-                                                "($1, $2, $3);", new NpgsqlConnection(_connectionString))
+                                                "($1, $2, $3);", conn)
         {
             Parameters =
             {
@@ -34,8 +37,10 @@ public class MessageRepository : IMessageRepository
     public async Task<IEnumerable<MessageDto>> GetMessagesHandler()
     {
         var messageModels = new List<MessageDto>();
+        var conn = new NpgsqlConnection(_connectionString);
+        conn.Open();
         
-        await using var cmd = new NpgsqlCommand("SELECT messages.id, messages.content, messages.user_id, messages.created_on, accounts.username FROM messages JOIN accounts ON messages.user_id = accounts.id ORDER BY messages.created_on DESC", new NpgsqlConnection(_connectionString));
+        await using var cmd = new NpgsqlCommand("SELECT messages.id, messages.content, messages.user_id, messages.created_on, accounts.username FROM messages JOIN accounts ON messages.user_id = accounts.id ORDER BY messages.created_on DESC", conn);
         var dataReader = await cmd.ExecuteReaderAsync();
         while (dataReader.Read())
         {
@@ -56,8 +61,10 @@ public class MessageRepository : IMessageRepository
     public async Task<IEnumerable<MessageDto>> GetMessagesOfUserById(int userId)
     {
         var messageModels = new List<MessageDto>();
+        var conn = new NpgsqlConnection(_connectionString);
+        conn.Open();
         
-        await using var cmd = new NpgsqlCommand("SELECT * FROM messages WHERE user_id = @userId ORDER BY created_on DESC", new NpgsqlConnection(_connectionString))
+        await using var cmd = new NpgsqlCommand("SELECT * FROM messages WHERE user_id = @userId ORDER BY created_on DESC", conn)
             {
                 Parameters = {
                     new NpgsqlParameter { ParameterName = "userId", Value = userId }
