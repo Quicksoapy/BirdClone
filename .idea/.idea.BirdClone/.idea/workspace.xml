@@ -7,32 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/BirdClone.Data/Globals.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Data/Accounts/AccountRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/Accounts/AccountRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Data/Messages/MessageRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/Messages/MessageRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/Debug/net7.0/BirdClone.Data.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/Debug/net7.0/BirdClone.Data.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/Accounts/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/Accounts/AccountService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/IAccountRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/IAccountRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/IMessageRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/IMessageRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/Messages/MessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/Messages/MessageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/Debug/net7.0/BirdClone.Domain.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/Debug/net7.0/BirdClone.Domain.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/AccountPage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/AccountPage.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/AccountPage.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/AccountPage.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/Login.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Login.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Register.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/Settings.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Settings.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.Web.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.Web.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/apphost" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/apphost" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/staticwebassets.build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/staticwebassets.development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/staticwebassets.pack.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/staticwebassets.pack.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,11 +34,6 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/441d103d8149d561cea0afccaaad79dd6f325fa44d78f954d43ba61e9b4cc76/ExecutorFactory.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/485da50d43321b81edc28153271bdedb84943a243743e2deaa67a981587968/IConfiguration.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/82f3bb64e8c52af0a0175218c6cd371f393f871ffe1482a2ffd51e7efaeddbb5/Task.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/97f781e0b41a234fb4a615ccff48c5b2d9c28611cd81496fa261ad4f9113eb/Future.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ea93d582c2debe8d7c89f3f4285f5130809d8b22e1f4c4d9634818087635/RazorPageOfT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BirdClone.Web/DatabaseLogin.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BirdClone.Web/Globals.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BirdClone.Web/Pages/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -78,10 +60,9 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.4519084&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/maya/Downloads/BirdClone-2c46b5e29545a5405de1ac5ba8cce6ea826fce8b/BirdClone.sln&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;SolutionBuilderGeneralOptionsPage&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -173,7 +154,11 @@
       <workItem from="1680243951491" duration="2024000" />
       <workItem from="1680249690105" duration="1632000" />
       <workItem from="1680717626740" duration="1812000" />
-      <workItem from="1681718852032" duration="5470000" />
+      <workItem from="1681301126069" duration="3266000" />
+      <workItem from="1681304411968" duration="989000" />
+      <workItem from="1681375633483" duration="2990000" />
+      <workItem from="1681904561028" duration="63000" />
+      <workItem from="1681904673024" duration="3884000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1677487782844</created>
@@ -217,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680685500988</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="rename AccountPage.cshtml">
+      <created>1681302502728</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681302502728</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,26 +236,10 @@
     <MESSAGE value="user can now login, Id is saved in cookies (unsafe)" />
     <MESSAGE value="account page" />
     <MESSAGE value="Always use seperate connection when loading messages, can't be static due to high frequency of use" />
-    <option name="LAST_COMMIT_MESSAGE" value="Always use seperate connection when loading messages, can't be static due to high frequency of use" />
+    <MESSAGE value="rename AccountPage.cshtml" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename AccountPage.cshtml" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BirdClone.Web/Pages/Index.cshtml.cs</url>
-          <line>31</line>
-          <properties documentPath="$PROJECT_DIR$/BirdClone.Web/Pages/Index.cshtml.cs" initialLine="31" containingFunctionPresentation="method 'OnGet'">
-            <startOffsets>
-              <option value="871" />
-            </startOffsets>
-            <endOffsets>
-              <option value="957" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Frame#BirdClone.postgres.DatabaseHandling.RegisterHandler" memberName="result" />

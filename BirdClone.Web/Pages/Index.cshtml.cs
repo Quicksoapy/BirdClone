@@ -26,12 +26,8 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-        IConfigurationRoot configuration = new ConfigurationBuilder()
-            .AddJsonFile("appsettings.json")
-            .Build();
-        var connection = new NpgsqlConnection(configuration.GetConnectionString("SqlServer"));
-        _messageService = new MessageService(new MessageRepository(connection.ToString()));
-        _accountService = new AccountService(new AccountRepository(connection.ToString()));
+        _messageService = new MessageService(new MessageRepository());
+        _accountService = new AccountService(new AccountRepository());
         Messages = _messageService.GetAllMessages();
         
         if (string.IsNullOrEmpty(Request.Cookies["UserId"])) return;
@@ -41,8 +37,7 @@ public class IndexModel : PageModel
 
     public void OnPost(IConfiguration configuration)
     {
-        var connection = new NpgsqlConnection(configuration.GetConnectionString("SqlServer"));
-        _messageService = new MessageService(new MessageRepository(connection.ToString()));
+        _messageService = new MessageService(new MessageRepository());
 
         MessageModel.CreatedOn = DateTime.UtcNow;
         MessageModel.UserId = Convert.ToInt32(Request.Cookies["UserId"]);

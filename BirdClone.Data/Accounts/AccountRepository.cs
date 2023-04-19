@@ -8,9 +8,10 @@ public class AccountRepository : IAccountRepository
 {
     private readonly string _connectionString;
 
-    public AccountRepository(string connectionString)
+    public AccountRepository()
     {
-        _connectionString = connectionString;
+        var globals = new Globals();
+        _connectionString = globals.GetDatabaseConnectionString();
     }
 
     public async Task<int> LoginHandler(string username, string password)

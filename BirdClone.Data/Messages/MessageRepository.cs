@@ -8,9 +8,10 @@ public class MessageRepository : IMessageRepository
 {
     private readonly string _connectionString;
 
-    public MessageRepository(string connectionString)
+    public MessageRepository()
     {
-        _connectionString = connectionString;
+        var globals = new Globals();
+        _connectionString = globals.GetDatabaseConnectionString();
     }
     
     public async Task<int> PostMessageHandler(MessageDto messageModel)
