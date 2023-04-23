@@ -21,4 +21,4 @@ All these things will also be processed into a docx-document.
 
 ### LU3: Documentation
 
-For this iteration, i will start with writing a documentation, describing the layout of the code and UI.
+For this iteration, i will start with writing documentation, describing the layout of the code and UI.
