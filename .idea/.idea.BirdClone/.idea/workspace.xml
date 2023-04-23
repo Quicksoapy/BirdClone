@@ -8,18 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/Accounts/AccountRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/Accounts/AccountRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/Messages/MessageRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/Messages/MessageRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/Debug/net7.0/BirdClone.Data.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/Debug/net7.0/BirdClone.Data.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/AccountPage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/AccountPage.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/AccountPage.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/AccountPage.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/Login.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Login.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Register.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/Settings.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Settings.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.Web.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.Web.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,29 +51,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.4519084",
-    "last_opened_file_path": "/home/maya/Downloads/BirdClone-2c46b5e29545a5405de1ac5ba8cce6ea826fce8b/BirdClone.sln",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.4519084&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/maya/Downloads/BirdClone-2c46b5e29545a5405de1ac5ba8cce6ea826fce8b/BirdClone.sln&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "rider.external.source.directories": [
-      "/home/maya/.config/JetBrains/Rider2023.1/resharper-host/DecompilerCache",
-      "/home/maya/.config/JetBrains/Rider2023.1/resharper-host/SourcesCache",
-      "/home/maya/.local/share/Symbols/src"
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/home/maya/.config/JetBrains/Rider2023.1/resharper-host/DecompilerCache&quot;,
+      &quot;/home/maya/.config/JetBrains/Rider2023.1/resharper-host/SourcesCache&quot;,
+      &quot;/home/maya/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BirdClone: https">
     <configuration name="BirdClone: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BirdClone.Web/BirdClone.Web.csproj" />
@@ -161,6 +153,9 @@
       <workItem from="1680249690105" duration="1632000" />
       <workItem from="1680717626740" duration="1812000" />
       <workItem from="1681718852032" duration="5470000" />
+      <workItem from="1681999837151" duration="5000" />
+      <workItem from="1681999849498" duration="1362000" />
+      <workItem from="1682237264520" duration="334000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1677487782844</created>
@@ -204,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680685500988</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="works again as before restructure">
+      <created>1681934173213</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681934173213</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +233,8 @@
     <MESSAGE value="user can now login, Id is saved in cookies (unsafe)" />
     <MESSAGE value="account page" />
     <MESSAGE value="Always use seperate connection when loading messages, can't be static due to high frequency of use" />
-    <option name="LAST_COMMIT_MESSAGE" value="Always use seperate connection when loading messages, can't be static due to high frequency of use" />
+    <MESSAGE value="works again as before restructure" />
+    <option name="LAST_COMMIT_MESSAGE" value="works again as before restructure" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
