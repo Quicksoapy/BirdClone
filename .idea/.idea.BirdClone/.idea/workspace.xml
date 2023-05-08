@@ -8,10 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdCloneDocs.odt" beforeDir="false" afterPath="$PROJECT_DIR$/BirdCloneDocs.odt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +152,9 @@
       <workItem from="1681718852032" duration="5470000" />
       <workItem from="1681999837151" duration="5000" />
       <workItem from="1681999849498" duration="1362000" />
-      <workItem from="1682237264520" duration="334000" />
+      <workItem from="1682237264520" duration="1539000" />
+      <workItem from="1682710495280" duration="95000" />
+      <workItem from="1683529782566" duration="1211000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1677487782844</created>
@@ -206,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681934173213</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="updated README.md">
+      <created>1682237752405</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682237752405</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +240,8 @@
     <MESSAGE value="account page" />
     <MESSAGE value="Always use seperate connection when loading messages, can't be static due to high frequency of use" />
     <MESSAGE value="works again as before restructure" />
-    <option name="LAST_COMMIT_MESSAGE" value="works again as before restructure" />
+    <MESSAGE value="updated README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated README.md" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
