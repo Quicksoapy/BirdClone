@@ -5,7 +5,7 @@
 - [Data layer](./BirdClone.Data)
 - [Domain layer](./BirdClone.Domain)
 - [Presentation layer](./BirdClone.Web)
-- [Documentation](./BirdCloneDocs.odt)
+- [Documentation](./Documentation)
 - [Readme (this page)](./README.md)
 
 ## Iteration 3

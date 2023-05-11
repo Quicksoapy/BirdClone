@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xKYlSQRmx9EFPktQsPq6wE8f8J+IHZQQHrT3reqNLmPWHmIanPoIGOyjN6bNON7l5ZpQ1Lk9EvxtjiE0+AH0lg==",
+  "dgSpecHash": "uZTGlOe8zfcCERZMQqAcpjZkcHssrPadzlqMgoQWff1NDrA7W7oJs1gLrTEl5OhWkFiVHu6D1L/ozy1Fznz+YQ==",
   "success": true,
   "projectFilePath": "/home/maya/RiderProjects/BirdClone/BirdClone.Domain/BirdClone.Domain.csproj",
-  "expectedPackageFiles": [
-    "/home/maya/.nuget/packages/microsoft.netcore.app.ref/7.0.2/microsoft.netcore.app.ref.7.0.2.nupkg.sha512",
-    "/home/maya/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.2/microsoft.aspnetcore.app.ref.7.0.2.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
