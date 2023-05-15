@@ -16,14 +16,11 @@ public class MessageService
         
         foreach (MessageDto messageDto in messageDtos)
         {
-            messages.Add(new Message
-            {
-                Id = messageDto.Id,
-                UserId = messageDto.UserId,
-                Username = messageDto.Username,
-                Content = messageDto.Content,
-                CreatedOn = messageDto.CreatedOn
-            });
+            messages.Add(new Message(messageDto.Id)
+                .WithUserId(messageDto.UserId)
+                .WithUsername(messageDto.Username)
+                .WithContent(messageDto.Content)
+                .WithCreatedOn(messageDto.CreatedOn));
         }
 
         return messages;
@@ -31,14 +28,12 @@ public class MessageService
     
     public async Task<int> PostMessage(Message message)
     {
-        var messageDto = new MessageDto()
-        {
-            Content = message.Content,
-            CreatedOn = message.CreatedOn,
-            Id = message.Id,
-            UserId = message.UserId,
-            Username = message.Username
-        };
+        var messageDto = new MessageDto(message.Id)
+            .WithUserId(message.UserId)
+            .WithUsername(message.Username)
+            .WithContent(message.Content)
+            .WithCreatedOn(message.CreatedOn);
+        
         var response = await _messageRepository.PostMessageHandler(messageDto);
         return response;
     }
@@ -50,14 +45,11 @@ public class MessageService
 
         foreach (MessageDto messageDto in messageDtos)
         {
-            messages.Add(new Message
-            {
-                Id = messageDto.Id,
-                UserId = messageDto.UserId,
-                Username = messageDto.Username,
-                Content = messageDto.Content,
-                CreatedOn = messageDto.CreatedOn
-            });
+            messages.Add(new Message(messageDto.Id)
+                .WithUserId(messageDto.UserId)
+                .WithUsername(messageDto.Username)
+                .WithContent(messageDto.Content)
+                .WithCreatedOn(messageDto.CreatedOn));
         }
 
         return messages;

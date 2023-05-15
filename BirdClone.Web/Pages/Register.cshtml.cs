@@ -15,8 +15,8 @@ public class Register : PageModel
     public void OnPost()
     {
         _accountService = new AccountService(new AccountRepository());
-        
-        RegisterModel.Password = Globals.GetSha512(RegisterModel.Password);
+
+        RegisterModel.WithPassword(Globals.GetSha512(RegisterModel.Password));
         _accountService.Register(RegisterModel);
 
         Redirect("/");

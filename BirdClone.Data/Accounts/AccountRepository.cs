@@ -58,7 +58,7 @@ public class AccountRepository : IAccountRepository
 
     public async Task<Account> GetAccountDataById(int userId)
     {
-        var account = new Account();
+        Account account = null;
         var conn = new NpgsqlConnection(_connectionString);
         conn.Open();
         
@@ -66,12 +66,12 @@ public class AccountRepository : IAccountRepository
         var dataReader = await cmd.ExecuteReaderAsync();
         while (dataReader.Read())
         {
-            account.Id = dataReader.GetInt32(dataReader.GetOrdinal("id"));
-            account.Username = dataReader.GetString(dataReader.GetOrdinal("username"));
-            account.Email = dataReader.GetString(dataReader.GetOrdinal("email"));
-            account.Country = dataReader.GetString(dataReader.GetOrdinal("country"));
-            account.CreatedOn = dataReader.GetDateTime(dataReader.GetOrdinal("created_on"));
-            account.LastLogin = dataReader.GetDateTime(dataReader.GetOrdinal("last_login"));
+            account = new Account(dataReader.GetInt32(dataReader.GetOrdinal("id")))
+                .WithUsername(dataReader.GetString(dataReader.GetOrdinal("username")))
+                .WithEmail(dataReader.GetString(dataReader.GetOrdinal("email")))
+                .WithCountry(dataReader.GetString(dataReader.GetOrdinal("country")))
+                .WithCreatedOn(dataReader.GetDateTime(dataReader.GetOrdinal("created_on")))
+                .WithLastLogin(dataReader.GetDateTime(dataReader.GetOrdinal("last_login")));
         }
 
         return account;

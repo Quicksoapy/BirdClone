@@ -21,9 +21,9 @@ public class Settings : PageModel
 
     public void OnPost()
     {
-        SettingsModel.Id = Convert.ToInt32(Request.Cookies["UserId"]);
-        SettingsModel.Password = Globals.GetSha512(SettingsModel.Password);
-        
-        _accountService.Edit(SettingsModel);
+        var account = new Account(Convert.ToInt32(Request.Cookies["UserId"]))
+            .WithPassword(Globals.GetSha512(SettingsModel.Password));
+
+        _accountService.Edit(account);
     }
 }

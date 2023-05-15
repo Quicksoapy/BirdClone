@@ -39,8 +39,8 @@ public class IndexModel : PageModel
     {
         _messageService = new MessageService(new MessageRepository());
 
-        MessageModel.CreatedOn = DateTime.UtcNow;
-        MessageModel.UserId = Convert.ToInt32(Request.Cookies["UserId"]);
+        MessageModel.WithCreatedOn(DateTime.UtcNow);
+        MessageModel.WithUserId(Convert.ToInt32(Request.Cookies["UserId"]));
         _messageService.PostMessage(MessageModel);
         
         OnGet();

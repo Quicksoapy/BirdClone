@@ -44,14 +44,12 @@ public class MessageRepository : IMessageRepository
         var dataReader = await cmd.ExecuteReaderAsync();
         while (dataReader.Read())
         {
-            var model = new MessageDto
-            {
-                Id = (uint)dataReader.GetInt64(dataReader.GetOrdinal("id")),
-                UserId = dataReader.GetInt32(dataReader.GetOrdinal("user_id")),
-                Content = dataReader.GetString(dataReader.GetOrdinal("content")),
-                CreatedOn = dataReader.GetDateTime(dataReader.GetOrdinal("created_on")),
-                Username = dataReader.GetString(dataReader.GetOrdinal("username"))
-            };
+            var model = new MessageDto((uint)dataReader.GetInt64(dataReader.GetOrdinal("id")))
+                .WithUserId(dataReader.GetInt32(dataReader.GetOrdinal("user_id")))
+                .WithUsername(dataReader.GetString(dataReader.GetOrdinal("username")))
+                .WithContent(dataReader.GetString(dataReader.GetOrdinal("content")))
+                .WithCreatedOn(dataReader.GetDateTime(dataReader.GetOrdinal("created_on")));
+            
             messageModels.Add(model);
         }
 
@@ -74,13 +72,12 @@ public class MessageRepository : IMessageRepository
         var dataReader = await cmd.ExecuteReaderAsync();
         while (dataReader.Read())
         {
-            var model = new MessageDto
-            {
-                Id = (uint)dataReader.GetInt64(dataReader.GetOrdinal("id")),
-                UserId = dataReader.GetInt32(dataReader.GetOrdinal("user_id")),
-                Content = dataReader.GetString(dataReader.GetOrdinal("content")),
-                CreatedOn = dataReader.GetDateTime(dataReader.GetOrdinal("created_on"))
-            };
+            var model = new MessageDto((uint)dataReader.GetInt64(dataReader.GetOrdinal("id")))
+                .WithUserId(dataReader.GetInt32(dataReader.GetOrdinal("user_id")))
+                .WithUsername(dataReader.GetString(dataReader.GetOrdinal("username")))
+                .WithContent(dataReader.GetString(dataReader.GetOrdinal("content")))
+                .WithCreatedOn(dataReader.GetDateTime(dataReader.GetOrdinal("created_on")));
+            
             messageModels.Add(model);
         }
 
