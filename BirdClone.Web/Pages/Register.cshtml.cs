@@ -15,9 +15,12 @@ public class Register : PageModel
     public void OnPost()
     {
         _accountService = new AccountService(new AccountRepository());
-
-        RegisterModel.WithPassword(Globals.GetSha512(RegisterModel.Password));
-        _accountService.Register(RegisterModel);
+        var account = new Account(0)
+            .WithUsername(RegisterModel.Username)
+            .WithPassword(Globals.GetSha512(RegisterModel.Password))
+            .WithEmail(RegisterModel.Email);
+        
+        _accountService.Register(account);
 
         Redirect("/");
     }
