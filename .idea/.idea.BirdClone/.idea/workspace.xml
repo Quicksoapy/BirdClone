@@ -8,38 +8,13 @@
   <component name="ChangeListManager">
     <list default="true" id="67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/Accounts/AccountRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/Accounts/AccountRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/Messages/MessageRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/Messages/MessageRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/BirdClone.Data.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/BirdClone.Data.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/BirdClone.Data.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/BirdClone.Data.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/Debug/net7.0/BirdClone.Data.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/Debug/net7.0/BirdClone.Data.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/Debug/net7.0/BirdClone.Data.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/Debug/net7.0/BirdClone.Data.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/Accounts/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/Accounts/AccountService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/Messages/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/Messages/Message.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/Messages/MessageDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/Messages/MessageDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/Messages/MessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/Messages/MessageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/BirdClone.Domain.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/BirdClone.Domain.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/BirdClone.Domain.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/BirdClone.Domain.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/Debug/net7.0/BirdClone.Domain.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/Debug/net7.0/BirdClone.Domain.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Register.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/Settings.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Settings.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/BirdClone.Web.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/BirdClone.Web.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/BirdClone.Web.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/BirdClone.Web.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.Web.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.Web.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.Web.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.Web.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/BirdCloneDocs.odt" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/BirdCloneDocs.odt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Untitled Diagram.drawio.png" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Untitled Diagram.drawio.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/classdiagram.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/classdiagram.drawio" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +162,8 @@
       <workItem from="1682710495280" duration="95000" />
       <workItem from="1683529782566" duration="1211000" />
       <workItem from="1683833946940" duration="3030000" />
-      <workItem from="1684146172885" duration="1090000" />
+      <workItem from="1684146172885" duration="2773000" />
+      <workItem from="1684256827984" duration="2764000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1677487782844</created>
@@ -245,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682237752405</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fixed restructure">
+      <created>1684149666537</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684149666537</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +257,8 @@
     <MESSAGE value="Always use seperate connection when loading messages, can't be static due to high frequency of use" />
     <MESSAGE value="works again as before restructure" />
     <MESSAGE value="updated README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated README.md" />
+    <MESSAGE value="fixed restructure" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed restructure" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
