@@ -14,7 +14,6 @@ public class AccountDto
     
     public AccountDto(int id)
     {
-        if (id == 0) throw new ArgumentException("The id can't be 0.");
         Id = id;
         Username = string.Empty;
         Password = string.Empty;
@@ -55,8 +54,8 @@ public class AccountDto
     
     public AccountDto WithCountry(string country)
     {
-        if (string.IsNullOrWhiteSpace(country))
-            throw new ArgumentException("The country can't be empty.", nameof(country));
+        //if (string.IsNullOrWhiteSpace(country))
+        //    throw new ArgumentException("The country can't be empty.", nameof(country));
 
         Country = country;
         return this;
@@ -82,8 +81,8 @@ public class AccountDto
     
     public AccountDto WithBio(string bio)
     {
-        if (string.IsNullOrWhiteSpace(bio))
-            throw new ArgumentException("The bio can't be empty.", nameof(bio));
+        //if (string.IsNullOrWhiteSpace(bio))
+        //    throw new ArgumentException("The bio can't be empty.", nameof(bio));
 
         Bio = bio;
         return this;
@@ -91,8 +90,8 @@ public class AccountDto
     
     public AccountDto WithProfilePicture(string profilePicture)
     {
-        if (string.IsNullOrWhiteSpace(profilePicture))
-            throw new ArgumentException("The profilePicture can't be empty.", nameof(profilePicture));
+        //if (string.IsNullOrWhiteSpace(profilePicture))
+        //    throw new ArgumentException("The profilePicture can't be empty.", nameof(profilePicture));
 
         ProfilePicture = profilePicture;
         return this;

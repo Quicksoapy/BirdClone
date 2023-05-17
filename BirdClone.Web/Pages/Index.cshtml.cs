@@ -1,4 +1,5 @@
-﻿using BirdClone.Data.Accounts;
+﻿using System.Xml.Xsl;
+using BirdClone.Data.Accounts;
 using BirdClone.Data.Messages;
 using BirdClone.Domain.Accounts;
 using BirdClone.Domain.Messages;
@@ -20,7 +21,7 @@ public class IndexModel : PageModel
         _logger = logger;
     }
     
-    [BindProperty] public Message MessageModel { get; set; }
+    [BindProperty] public MessageModel MessageModel { get; set; }
     
     [BindProperty] public IEnumerable<Message> Messages { get; set; }
 
@@ -35,14 +36,17 @@ public class IndexModel : PageModel
         Response.Cookies.Append("Username", account.Username);
     }
 
-    public void OnPost(IConfiguration configuration)
+    public void OnPost()
     {
         _messageService = new MessageService(new MessageRepository());
+        var message = new Message()
+            .WithUserId(Convert.ToInt32(Request.Cookies["UserId"]))
+            .WithContent(MessageModel.Content)
+            .WithUsername(Request.Cookies["Username"] ?? throw new InvalidOperationException())
+            .WithCreatedOn(DateTime.UtcNow);
 
-        MessageModel.WithCreatedOn(DateTime.UtcNow);
-        MessageModel.WithUserId(Convert.ToInt32(Request.Cookies["UserId"]));
-        _messageService.PostMessage(MessageModel);
-        
+        _messageService.PostMessage(message);
+
         OnGet();
     }
 }

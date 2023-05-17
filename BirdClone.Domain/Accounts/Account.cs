@@ -13,9 +13,21 @@ public class Account
     public string Bio { get; private set; }
     public string ProfilePicture { get; private set; }
 
+    public Account()
+    {
+        Id = 0;
+        Username = string.Empty;
+        Password = string.Empty;
+        Email = string.Empty;
+        Country = string.Empty;
+        CreatedOn = DateTime.MinValue;
+        LastLogin = DateTime.MinValue;
+        Bio = string.Empty;
+        ProfilePicture = string.Empty;
+    }
+    
     public Account(int id)
     {
-        if (id == 0) throw new ArgumentException("The id can't be 0.");
         Id = id;
         Username = string.Empty;
         Password = string.Empty;
@@ -56,8 +68,8 @@ public class Account
     
     public Account WithCountry(string country)
     {
-        if (string.IsNullOrWhiteSpace(country))
-            throw new ArgumentException("The country can't be empty.", nameof(country));
+        //if (string.IsNullOrWhiteSpace(country))
+        //    throw new ArgumentException("The country can't be empty.", nameof(country));
 
         Country = country;
         return this;
@@ -83,8 +95,8 @@ public class Account
     
     public Account WithBio(string bio)
     {
-        if (string.IsNullOrWhiteSpace(bio))
-            throw new ArgumentException("The bio can't be empty.", nameof(bio));
+        //if (string.IsNullOrWhiteSpace(bio))
+        //    throw new ArgumentException("The bio can't be empty.", nameof(bio));
 
         Bio = bio;
         return this;
@@ -92,8 +104,8 @@ public class Account
     
     public Account WithProfilePicture(string profilePicture)
     {
-        if (string.IsNullOrWhiteSpace(profilePicture))
-            throw new ArgumentException("The profilePicture can't be empty.", nameof(profilePicture));
+        //if (string.IsNullOrWhiteSpace(profilePicture))
+        //    throw new ArgumentException("The profilePicture can't be empty.", nameof(profilePicture));
 
         ProfilePicture = profilePicture;
         return this;

@@ -6,13 +6,21 @@ public class Message
 {
     public UInt32 Id { get; private set; }
     public int UserId { get; private set; }
-    public string Username { get; private set; } = "";
-    public string Content { get; private set; } = "";
-    public DateTime CreatedOn { get; private set; } = DateTime.UtcNow;
+    public string Username { get; private set; }
+    public string Content { get; private set; }
+    public DateTime CreatedOn { get; private set; }
 
+    public Message()
+    {
+        Id = 0;
+        UserId = 0;
+        Username = string.Empty;
+        Content = string.Empty;
+        CreatedOn = DateTime.MinValue;
+    }
+    
     public Message(uint id)
     {
-        if (id == 0) throw new ArgumentException("The id can't be 0.");
         Id = id;
         UserId = 0;
         Username = string.Empty;

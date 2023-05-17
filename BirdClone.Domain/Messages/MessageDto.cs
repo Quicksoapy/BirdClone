@@ -10,7 +10,6 @@ public class MessageDto
 
     public MessageDto(uint id)
     {
-        if (id == 0) throw new ArgumentException("The id can't be 0.");
         Id = id;
         UserId = 0;
         Username = string.Empty;
