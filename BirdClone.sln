@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirdClone.Data", "BirdClone
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirdClone.Domain", "BirdClone.Domain\BirdClone.Domain.csproj", "{2601C05B-C598-4EDA-883F-9A896A2C395B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirdClone.UnitTests", "BirdClone.UnitTests\BirdClone.UnitTests.csproj", "{AA4CCA29-EA1C-4870-A3A4-4F52AE281258}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{2601C05B-C598-4EDA-883F-9A896A2C395B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2601C05B-C598-4EDA-883F-9A896A2C395B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2601C05B-C598-4EDA-883F-9A896A2C395B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA4CCA29-EA1C-4870-A3A4-4F52AE281258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA4CCA29-EA1C-4870-A3A4-4F52AE281258}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA4CCA29-EA1C-4870-A3A4-4F52AE281258}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA4CCA29-EA1C-4870-A3A4-4F52AE281258}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

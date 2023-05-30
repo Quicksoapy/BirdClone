@@ -11,6 +11,7 @@ public class MessageService
 
     public async Task<List<Message>> GetMessagesByUserId(int userId)
     {
+        //TODO fix async garbage
         IEnumerable<MessageDto> messageDtos = await _messageRepository.GetMessagesOfUserById(userId);
         List<Message> messages = new();
         
@@ -28,6 +29,7 @@ public class MessageService
     
     public async Task<int> PostMessage(Message message)
     {
+        //TODO fix async garbage
         var messageDto = new MessageDto(message.Id)
             .WithUserId(message.UserId)
             .WithUsername(message.Username)
