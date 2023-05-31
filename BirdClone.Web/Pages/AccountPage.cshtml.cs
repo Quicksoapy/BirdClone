@@ -18,7 +18,7 @@ public class AccountPage : PageModel
         _accountService = new AccountService(new AccountRepository());
         _messageService = new MessageService(new MessageRepository());
         
-        AccountModel = _accountService.GetAccountDataById(id).Result;
-        MessagesByUser = _messageService.GetMessagesByUserId(id).Result;
+        AccountModel = _accountService.GetAccountDataById(id);
+        MessagesByUser = _messageService.GetMessagesByUserId(id);
     }
 }

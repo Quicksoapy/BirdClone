@@ -13,8 +13,6 @@ public class AccountService
 
     public void Edit(Account account)
     {
-        //TODO check if account exists
-        
         var accountDto = new AccountDto(account.Id)
             .WithUsername(account.Username)
             .WithEmail(account.Email)
@@ -23,9 +21,10 @@ public class AccountService
             .WithCountry(account.Country)
             .WithProfilePicture(account.ProfilePicture);
         
+        _accountRepository.AccountExist(accountDto);
         _accountRepository.EditAccount(accountDto);
     }
-    
+
     public void Register(Account account)
     {
         var accountDto = new AccountDto(account.Id)
@@ -34,19 +33,22 @@ public class AccountService
             .WithPassword(account.Password)
             .WithCreatedOn(account.CreatedOn)
             .WithLastLogin(account.LastLogin);
+
+        if (_accountRepository.EmailExist(accountDto.Email))
+        {
+            return;
+        }
         
         _accountRepository.RegisterHandler(accountDto);
     }
     public int Login(string username, string password)
     {
-        //TODO fix async garbage
-        return _accountRepository.LoginHandler(username, password).Result;
+        return _accountRepository.LoginHandler(username, password);
     }
 
-    public async Task<Account> GetAccountDataById(int id)
+    public Account GetAccountDataById(int id)
     {
-        //TODO fix async garbage
-        var accountDto = await _accountRepository.GetAccountDataById(id);
+        var accountDto = _accountRepository.GetAccountDataById(id);
         
         var account = new Account(accountDto.Id)
             .WithUsername(accountDto.Username)

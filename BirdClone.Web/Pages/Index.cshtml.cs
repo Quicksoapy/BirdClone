@@ -29,11 +29,12 @@ public class IndexModel : PageModel
     {
         _messageService = new MessageService(new MessageRepository());
         _accountService = new AccountService(new AccountRepository());
-        Messages = _messageService.GetAllMessages();
-        
+
         if (string.IsNullOrEmpty(Request.Cookies["UserId"])) return;
-        var account = _accountService.GetAccountDataById(Convert.ToInt32(Request.Cookies["UserId"])).Result;
+        var account = _accountService.GetAccountDataById(Convert.ToInt32(Request.Cookies["UserId"]));
         Response.Cookies.Append("Username", account.Username);
+        
+       
     }
 
     public void OnPost()

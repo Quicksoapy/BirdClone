@@ -9,10 +9,9 @@ public class MessageService
         _messageRepository = messageRepository;
     }
 
-    public async Task<List<Message>> GetMessagesByUserId(int userId)
+    public List<Message> GetMessagesByUserId(int userId)
     {
-        //TODO fix async garbage
-        IEnumerable<MessageDto> messageDtos = await _messageRepository.GetMessagesOfUserById(userId);
+        IEnumerable<MessageDto> messageDtos = _messageRepository.GetMessagesOfUserById(userId);
         List<Message> messages = new();
         
         foreach (MessageDto messageDto in messageDtos)
@@ -27,22 +26,30 @@ public class MessageService
         return messages;
     }
     
-    public async Task<int> PostMessage(Message message)
+    public int PostMessage(Message message)
     {
-        //TODO fix async garbage
         var messageDto = new MessageDto(message.Id)
             .WithUserId(message.UserId)
             .WithUsername(message.Username)
             .WithContent(message.Content)
             .WithCreatedOn(message.CreatedOn);
         
-        var response = await _messageRepository.PostMessageHandler(messageDto);
+        if (_messageRepository.UserExist(message.UserId, message.Username) == false)
+        {
+            return 0;
+        }
+
+        if (message.Content.Length > 500)
+        {
+            return 0;
+        }
+        var response = _messageRepository.PostMessageHandler(messageDto);
         return response;
     }
     
     public IEnumerable<Message> GetAllMessages()
     {
-        IEnumerable<MessageDto> messageDtos = _messageRepository.GetMessagesHandler().Result;
+        IEnumerable<MessageDto> messageDtos = _messageRepository.GetMessagesHandler();
         List<Message> messages = new();
 
         foreach (MessageDto messageDto in messageDtos)

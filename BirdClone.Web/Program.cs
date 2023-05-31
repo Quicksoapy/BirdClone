@@ -1,3 +1,5 @@
+using BirdClone.Data.Accounts;
+using BirdClone.Domain.Accounts;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,3 +27,4 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
+

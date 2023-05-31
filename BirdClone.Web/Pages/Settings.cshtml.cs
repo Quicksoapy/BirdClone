@@ -16,7 +16,7 @@ public class Settings : PageModel
         
         var userId = Convert.ToInt32(Request.Cookies["UserId"]);
 
-        SettingsModel = _accountService.GetAccountDataById(userId).Result;
+        SettingsModel = _accountService.GetAccountDataById(userId);
     }
 
     public void OnPost()

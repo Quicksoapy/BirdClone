@@ -5,12 +5,15 @@ namespace BirdClone.Domain;
 
 public interface IAccountRepository
 {
-    Task<int> LoginHandler(string username, string password);
+    int LoginHandler(string username, string password);
 
-    Task RegisterHandler(AccountDto accountDto);
+    void RegisterHandler(AccountDto accountDto);
 
-    Task<Account> GetAccountDataById(int userId);
-    Task EditAccount(AccountDto account);
+    Account GetAccountDataById(int userId);
+    void EditAccount(AccountDto account);
+    bool AccountExist(AccountDto account);
+
+    bool EmailExist(string email);
 
     void UpdateLastLogin(int userId);
 }

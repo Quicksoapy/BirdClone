@@ -13,13 +13,13 @@ public class MessageRepository : IMessageRepository
         var globals = new Globals();
         _connectionString = globals.GetDatabaseConnectionString();
     }
-    
-    public async Task<int> PostMessageHandler(MessageDto messageModel)
+
+    public int PostMessageHandler(MessageDto messageModel)
     {
         var conn = new NpgsqlConnection(_connectionString);
         conn.Open();
         
-        await using var cmd = new NpgsqlCommand("INSERT INTO messages " +
+        using var cmd = new NpgsqlCommand("INSERT INTO messages " +
                                                 "(user_id, content, created_on) VALUES " +
                                                 "($1, $2, $3);", conn)
         {
@@ -30,18 +30,18 @@ public class MessageRepository : IMessageRepository
                 new NpgsqlParameter { Value = messageModel.CreatedOn },
             }
         };
-        var result = await cmd.ExecuteNonQueryAsync();
+        var result = cmd.ExecuteNonQuery();
         return result;
     }
 
-    public async Task<IEnumerable<MessageDto>> GetMessagesHandler()
+    public IEnumerable<MessageDto> GetMessagesHandler()
     {
         var messageModels = new List<MessageDto>();
         var conn = new NpgsqlConnection(_connectionString);
         conn.Open();
         
-        await using var cmd = new NpgsqlCommand("SELECT messages.id, messages.content, messages.user_id, messages.created_on, accounts.username FROM messages JOIN accounts ON messages.user_id = accounts.id ORDER BY messages.created_on DESC", conn);
-        var dataReader = await cmd.ExecuteReaderAsync();
+        using var cmd = new NpgsqlCommand("SELECT messages.id, messages.content, messages.user_id, messages.created_on, accounts.username FROM messages JOIN accounts ON messages.user_id = accounts.id ORDER BY messages.created_on DESC", conn);
+        var dataReader = cmd.ExecuteReader();
         while (dataReader.Read())
         {
             var model = new MessageDto((uint)dataReader.GetInt64(dataReader.GetOrdinal("id")))
@@ -56,20 +56,20 @@ public class MessageRepository : IMessageRepository
         return messageModels;
     }
 
-    public async Task<IEnumerable<MessageDto>> GetMessagesOfUserById(int userId)
+    public IEnumerable<MessageDto> GetMessagesOfUserById(int userId)
     {
         var messageModels = new List<MessageDto>();
         var conn = new NpgsqlConnection(_connectionString);
         conn.Open();
         
-        await using var cmd = new NpgsqlCommand("SELECT * FROM messages WHERE user_id = @userId ORDER BY created_on DESC", conn)
+        using var cmd = new NpgsqlCommand("SELECT * FROM messages WHERE user_id = @userId ORDER BY created_on DESC", conn)
             {
                 Parameters = {
                     new NpgsqlParameter { ParameterName = "userId", Value = userId }
                 }
             };
         
-        var dataReader = await cmd.ExecuteReaderAsync();
+        var dataReader = cmd.ExecuteReader();
         while (dataReader.Read())
         {
             var model = new MessageDto((uint)dataReader.GetInt64(dataReader.GetOrdinal("id")))
@@ -82,5 +82,28 @@ public class MessageRepository : IMessageRepository
         }
 
         return messageModels;
+    }
+
+    public bool UserExist(int userId, string username)
+    {
+        var conn = new NpgsqlConnection(_connectionString);
+        conn.Open();
+
+        using var cmd = new NpgsqlCommand("select exists(select id from accounts where id= $1 and username= $2);", conn)
+        {
+            Parameters =
+            {
+                new NpgsqlParameter { Value = userId },
+                new NpgsqlParameter { Value = username}
+            }
+        };
+        var result = cmd.ExecuteScalar();
+
+        if (result is not bool x) return false;
+        if ((bool?)x == true)
+        {
+            return true;
+        }
+        return false;
     }
 }

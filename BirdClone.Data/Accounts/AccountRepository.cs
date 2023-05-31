@@ -14,15 +14,15 @@ public class AccountRepository : IAccountRepository
         _connectionString = globals.GetDatabaseConnectionString();
     }
 
-    public async Task<int> LoginHandler(string username, string password)
+    public int LoginHandler(string username, string password)
     {
         var conn = new NpgsqlConnection(_connectionString);
         conn.Open();
         
-        await using var cmd =
+        using var cmd =
             new NpgsqlCommand(
                 "SELECT Id FROM accounts WHERE username='" + username + "' AND password='" + password + "';", conn);
-        var result = await cmd.ExecuteScalarAsync();
+        var result = cmd.ExecuteScalar();
         
         var resultInt32 = Convert.ToInt32(result);
         if (resultInt32 > 0)
@@ -33,12 +33,12 @@ public class AccountRepository : IAccountRepository
         return resultInt32;
     }
 
-    public async Task RegisterHandler(AccountDto accountDto)
+    public void RegisterHandler(AccountDto accountDto)
     {
         var conn = new NpgsqlConnection(_connectionString);
         conn.Open();
         
-        await using var cmd = new NpgsqlCommand("INSERT INTO accounts " +
+        using var cmd = new NpgsqlCommand("INSERT INTO accounts " +
                                                 "(username, password, email, country, created_on, last_login) VALUES " +
                                                 "($1, $2, $3, $4, $5, $6);", conn)
         {
@@ -52,18 +52,18 @@ public class AccountRepository : IAccountRepository
                 new NpgsqlParameter { Value = DateTime.UtcNow }
             }
         };
-        var result = await cmd.ExecuteNonQueryAsync();
+        var result = cmd.ExecuteNonQuery();
         Console.WriteLine(result);
     }
 
-    public async Task<Account> GetAccountDataById(int userId)
+    public Account GetAccountDataById(int userId)
     {
         Account account = null;
         var conn = new NpgsqlConnection(_connectionString);
         conn.Open();
         
-        await using var cmd = new NpgsqlCommand("SELECT * FROM accounts WHERE id = " + userId, conn);
-        var dataReader = await cmd.ExecuteReaderAsync();
+        using var cmd = new NpgsqlCommand("SELECT * FROM accounts WHERE id = " + userId, conn);
+        var dataReader = cmd.ExecuteReader();
         while (dataReader.Read())
         {
             account = new Account(dataReader.GetInt32(dataReader.GetOrdinal("id")))
@@ -77,12 +77,12 @@ public class AccountRepository : IAccountRepository
         return account;
     }
 
-    public Task EditAccount(AccountDto account)
+    public void EditAccount(AccountDto account)
     {
         var conn = new NpgsqlConnection(_connectionString);
         conn.Open();
         
-        using var cmd = new NpgsqlCommand("UPDATE accounts SET username = $1, password = $2, " +
+        var cmd = new NpgsqlCommand("UPDATE accounts SET username = $1, password = $2, " +
                                           "email = $3, country = $4 WHERE id = $5;", conn)
         {
             Parameters =
@@ -94,9 +94,52 @@ public class AccountRepository : IAccountRepository
                 new NpgsqlParameter { Value = account.Id}
             }
         };
-        var result = cmd.ExecuteNonQueryAsync().Result;
+        var result = cmd.ExecuteNonQuery();
         Console.WriteLine(result);
-        return Task.CompletedTask;
+    }
+
+    public bool AccountExist(AccountDto account)
+    {
+        var conn = new NpgsqlConnection(_connectionString);
+        conn.Open();
+
+        using var cmd = new NpgsqlCommand("select exists(select id from accounts where id= $1);", conn)
+        {
+            Parameters =
+            {
+                new NpgsqlParameter { Value = account.Id }
+            }
+        };
+        var result = cmd.ExecuteScalar();
+
+        if (result is not bool x) return false;
+        if ((bool?)x == true)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public bool EmailExist(string email)
+    {
+        var conn = new NpgsqlConnection(_connectionString);
+        conn.Open();
+
+        using var cmd = new NpgsqlCommand("select exists(select id from accounts where email= $1);", conn)
+        {
+            Parameters =
+            {
+                new NpgsqlParameter { Value = email }
+            }
+        };
+        var result = cmd.ExecuteScalar();
+
+        if (result is not bool x) return false;
+        if ((bool?)x == true)
+        {
+            return true;
+        }
+        return false;
     }
 
     public void UpdateLastLogin(int userId)
