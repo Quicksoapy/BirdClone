@@ -3,7 +3,15 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.43">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>837</IntrospectionStateNumber>
+      <Grants>1||-9223372036854775808|c|G
+1||10|c|G
+1||10|C|G
+1||10|T|G
+4||-9223372036854775808|c|G
+4||10|c|G
+4||10|C|G
+4||10|T|G</Grants>
+      <IntrospectionStateNumber>838</IntrospectionStateNumber>
       <ServerVersion>15.2</ServerVersion>
       <StartupTime>1677776702</StartupTime>
       <TimeZones>true ACDT
@@ -1394,7 +1402,7 @@ true posixrules
 13186||10|C|G
 13186||-9223372036854775808|U|G
 13186||10|U|G</Grants>
-      <IntrospectionStateNumber>837</IntrospectionStateNumber>
+      <IntrospectionStateNumber>838</IntrospectionStateNumber>
       <ObjectId>16384</ObjectId>
       <Relations>sequence|table|16385|16386|1
 sequence|table|16428|16429|1
@@ -4816,7 +4824,7 @@ sequence|table|16448|16449|1
     <schema id="263" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>837</IntrospectionStateNumber>
+      <IntrospectionStateNumber>838</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -5043,7 +5051,6 @@ sequence|table|16448|16449|1
     </column>
     <index id="295" parent="269" name="retweets_pkey">
       <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
       <ObjectId>16453</ObjectId>
       <Primary>1</Primary>
       <StateNumber>833</StateNumber>

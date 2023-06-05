@@ -1,3 +1,4 @@
+using System.Reflection.Metadata;
 using BirdClone.Domain;
 using BirdClone.Domain.Messages;
 using Npgsql;
@@ -93,7 +94,7 @@ public class MessageRepository : IMessageRepository
         var conn = new NpgsqlConnection(_connectionString);
         conn.Open();
         
-        using var cmd = new NpgsqlCommand("SELECT * FROM reposts WHERE user_id = @userId ORDER BY created_on DESC", conn)
+        using var cmd = new NpgsqlCommand("SELECT messages.id, messages.content, messages.user_id, messages.created_on, accounts.username, reposts.id, reposts.message_id, reposts.user_id, reposts.created_on FROM reposts JOIN messages ON messages.id = reposts.message_id JOIN accounts ON messages.user_id = accounts.id ORDER BY messages.created_on DESC", conn)
         {
             Parameters = {
                 new NpgsqlParameter { ParameterName = "userId", Value = userId }
@@ -103,15 +104,19 @@ public class MessageRepository : IMessageRepository
         var dataReader = cmd.ExecuteReader();
         while (dataReader.Read())
         {
-            var model = new RepostDto((uint)dataReader.GetInt64(dataReader.GetOrdinal("id")))
-                .WithUserId(dataReader.GetInt32(dataReader.GetOrdinal("user_id")))
-                .withme
-                .WithCreatedOn(dataReader.GetDateTime(dataReader.GetOrdinal("created_on")));
+            var model = new RepostDto((uint)dataReader.GetInt64(dataReader.GetOrdinal("messages.id")))
+                .WithUserIdOp(dataReader.GetInt32(dataReader.GetOrdinal("messages.user_id")))
+                .WithUsernameOp(dataReader.GetString(dataReader.GetOrdinal("accounts.username")))
+                .WithContentOp(dataReader.GetString(dataReader.GetOrdinal("messages.content")))
+                .WithCreatedOnOp(dataReader.GetDateTime(dataReader.GetOrdinal("messages.created_on")))
+                .WithUserId(dataReader.GetInt32(dataReader.GetOrdinal("reposts.user_id")))
+                //.WithUsername(dataReader.GetString(dataReader.GetOrdinal("reposts.username")))//TODO join this username too
+                .WithCreatedOn(dataReader.GetDateTime(dataReader.GetOrdinal("messages.created_on")));
             
             repostModels.Add(model);
         }
 
-        return messageModels;
+        return repostModels;
     }
 
     public bool UserExist(int userId, string username)
