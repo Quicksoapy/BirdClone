@@ -18,10 +18,10 @@ public class MessageRepository : IMessageRepository
     {
         var conn = new NpgsqlConnection(_connectionString);
         conn.Open();
-        
+
         using var cmd = new NpgsqlCommand("INSERT INTO messages " +
-                                                "(user_id, content, created_on) VALUES " +
-                                                "($1, $2, $3);", conn)
+                                          "(user_id, content, created_on) VALUES " +
+                                          "($1, $2, $3);", conn)
         {
             Parameters =
             {
@@ -39,8 +39,11 @@ public class MessageRepository : IMessageRepository
         var messageModels = new List<MessageDto>();
         var conn = new NpgsqlConnection(_connectionString);
         conn.Open();
-        
-        using var cmd = new NpgsqlCommand("SELECT messages.id, messages.content, messages.user_id, messages.created_on, accounts.username FROM messages JOIN accounts ON messages.user_id = accounts.id ORDER BY messages.created_on DESC", conn);
+
+        using var cmd =
+            new NpgsqlCommand(
+                "SELECT messages.id, messages.content, messages.user_id, messages.created_on, accounts.username FROM messages JOIN accounts ON messages.user_id = accounts.id ORDER BY messages.created_on DESC",
+                conn);
         var dataReader = cmd.ExecuteReader();
         while (dataReader.Read())
         {
@@ -49,7 +52,7 @@ public class MessageRepository : IMessageRepository
                 .WithUsername(dataReader.GetString(dataReader.GetOrdinal("username")))
                 .WithContent(dataReader.GetString(dataReader.GetOrdinal("content")))
                 .WithCreatedOn(dataReader.GetDateTime(dataReader.GetOrdinal("created_on")));
-            
+
             messageModels.Add(model);
         }
 
@@ -79,6 +82,33 @@ public class MessageRepository : IMessageRepository
                 .WithCreatedOn(dataReader.GetDateTime(dataReader.GetOrdinal("created_on")));
             
             messageModels.Add(model);
+        }
+
+        return messageModels;
+    }
+    
+    public IEnumerable<RepostDto> GetRepostsOfUserById(int userId)
+    {
+        var repostModels = new List<RepostDto>();
+        var conn = new NpgsqlConnection(_connectionString);
+        conn.Open();
+        
+        using var cmd = new NpgsqlCommand("SELECT * FROM reposts WHERE user_id = @userId ORDER BY created_on DESC", conn)
+        {
+            Parameters = {
+                new NpgsqlParameter { ParameterName = "userId", Value = userId }
+            }
+        };
+        
+        var dataReader = cmd.ExecuteReader();
+        while (dataReader.Read())
+        {
+            var model = new RepostDto((uint)dataReader.GetInt64(dataReader.GetOrdinal("id")))
+                .WithUserId(dataReader.GetInt32(dataReader.GetOrdinal("user_id")))
+                .withme
+                .WithCreatedOn(dataReader.GetDateTime(dataReader.GetOrdinal("created_on")));
+            
+            repostModels.Add(model);
         }
 
         return messageModels;

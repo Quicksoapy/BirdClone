@@ -15,3 +15,10 @@ CREATE TABLE IF NOT EXISTS Accounts (
     last_login TIMESTAMP WITH TIME ZONE
 );
 
+CREATE TABLE IF NOT EXISTS Reposts (
+    id serial PRIMARY KEY,
+    message_id INT NOT NULL,
+    user_id INT NOT NULL,
+    created_on TIMESTAMP WITH TIME ZONE NOT NULL
+);
+
