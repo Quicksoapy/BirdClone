@@ -29,3 +29,14 @@
     </div>
 }
 
+@foreach (var repost in Model.RepostsByUser)
+{
+<div class="card" style="width: 18rem; margin-right: 1rem; margin-top: 1rem; float: left;">
+    <div class="card-body">
+        <h5 class="card-title"><a asp-page="/AccountPage" asp-route-id="@repost.UserIdOp">@repost.UsernameOp</a></h5>
+        <p class="card-text">@repost.Content</p>
+    </div>
+    <p class="card-text text-muted">@repost.CreatedOn.ToString("ddd, dd MMM yyyy H:mm:ss")</p>
+</div>
+}
+

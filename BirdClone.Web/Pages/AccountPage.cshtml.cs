@@ -13,6 +13,7 @@ public class AccountPage : PageModel
     private AccountService _accountService;
     [BindProperty] public Account AccountModel { get; set; }
     [BindProperty] public List<Message> MessagesByUser { get; set; }
+    [BindProperty] public List<Repost> RepostsByUser { get; set; }
     public void OnGet(int id)
     {
         _accountService = new AccountService(new AccountRepository());
@@ -20,5 +21,6 @@ public class AccountPage : PageModel
         
         AccountModel = _accountService.GetAccountDataById(id);
         MessagesByUser = _messageService.GetMessagesByUserId(id);
+        RepostsByUser = _messageService.GetRepostsByUserId(id);
     }
 }

@@ -30,11 +30,11 @@ public class IndexModel : PageModel
         _messageService = new MessageService(new MessageRepository());
         _accountService = new AccountService(new AccountRepository());
 
+        Messages = _messageService.GetAllMessages();
+
         if (string.IsNullOrEmpty(Request.Cookies["UserId"])) return;
         var account = _accountService.GetAccountDataById(Convert.ToInt32(Request.Cookies["UserId"]));
         Response.Cookies.Append("Username", account.Username);
-        
-       
     }
 
     public void OnPost()
@@ -51,7 +51,3 @@ public class IndexModel : PageModel
         OnGet();
     }
 }
-//TODO look at flexbox, css-grid, bootstrap column rows for nicer mosaic style messages
-//https://getbootstrap.com/docs/5.3/utilities/spacing/
-//https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-//https://css-tricks.com/snippets/css/complete-guide-grid/

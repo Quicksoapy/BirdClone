@@ -10,5 +10,6 @@ public interface IMessageRepository
     IEnumerable<MessageDto> GetMessagesHandler();
 
     IEnumerable<MessageDto> GetMessagesOfUserById(int userId);
+    IEnumerable<RepostDto> GetRepostsOfUserById(int userId);
     bool UserExist(int userId, string username);
 }
