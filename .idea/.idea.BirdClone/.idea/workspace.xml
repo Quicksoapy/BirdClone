@@ -7,19 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/dataSources/764ff30d-fdff-487f-902b-b72e165fdfb4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/dataSources/764ff30d-fdff-487f-902b-b72e165fdfb4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone.UnitTests/AccountRepositoryTestFalse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone.UnitTests/AccountRepositoryTestTrue.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone.UnitTests/MessageRepositoryTestFalse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BirdClone.UnitTests/MessageRepositoryTestTrue.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/Messages/MessageRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/Messages/MessageRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/Debug/net7.0/BirdClone.Data.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/Debug/net7.0/BirdClone.Data.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/IMessageRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/IMessageRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/Messages/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/Messages/Message.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/Messages/MessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/Messages/MessageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/AccountPage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/AccountPage.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/AccountPage.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/AccountPage.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/Pages/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/bin/Debug/net7.0/BirdClone.Web.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone.UnitTests/AccountServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.UnitTests/AccountServiceTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone.UnitTests/BirdClone.UnitTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.UnitTests/BirdClone.UnitTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone.UnitTests/obj/BirdClone.UnitTests.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.UnitTests/obj/BirdClone.UnitTests.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.Web.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.Web.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/jquery-validation/dist/additional-methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/wwwroot/lib/jquery-validation/dist/additional-methods.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +172,7 @@
       <workItem from="1685533189062" duration="3470000" />
       <workItem from="1686037051275" duration="623000" />
       <workItem from="1686037692066" duration="4421000" />
+      <workItem from="1686125965031" duration="4154000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1677487782844</created>
