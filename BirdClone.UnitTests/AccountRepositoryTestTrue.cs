@@ -15,16 +15,16 @@ public class AccountRepositoryTestTrue : IAccountRepository
         return;
     }
 
-    public Account GetAccountDataById(int userId)
+    public AccountDto GetAccountDataById(int userId)
     {
-        var account = new Account(userId)
+        var account = new AccountDto(userId)
             .WithBio("Bio")
             .WithCountry("Country")
             .WithEmail("Email")
             .WithPassword("Password")
             .WithUsername("Username")
-            .WithCreatedOn(DateTime.MinValue)
-            .WithLastLogin(DateTime.MinValue)
+            .WithCreatedOn(DateTime.UnixEpoch)
+            .WithLastLogin(DateTime.UnixEpoch)
             .WithProfilePicture("UrlToProfilePicture");
 
         return account;

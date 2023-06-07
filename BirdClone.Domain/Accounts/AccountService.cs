@@ -20,7 +20,7 @@ public class AccountService
             .WithBio(account.Bio)
             .WithCountry(account.Country)
             .WithProfilePicture(account.ProfilePicture);
-        
+
         _accountRepository.AccountExist(accountDto);
         _accountRepository.EditAccount(accountDto);
     }
@@ -38,10 +38,10 @@ public class AccountService
         {
             return;
         }
-        
+
         _accountRepository.RegisterHandler(accountDto);
     }
-    
+
     public int Login(string username, string password)
     {
         return _accountRepository.LoginHandler(username, password);
@@ -50,8 +50,18 @@ public class AccountService
     public Account GetAccountDataById(int id)
     {
         var accountDto = _accountRepository.GetAccountDataById(id);
+
+        if (string.IsNullOrWhiteSpace(accountDto.Username)
+            || string.IsNullOrWhiteSpace(accountDto.Email)
+            || string.IsNullOrWhiteSpace(accountDto.Password)
+            || accountDto.CreatedOn == DateTime.MinValue
+            || accountDto.LastLogin == DateTime.MinValue)
+        {
+            return new Account();
+        }
         
         var account = new Account(accountDto.Id)
+            .WithPassword(accountDto.Password)
             .WithUsername(accountDto.Username)
             .WithBio(accountDto.Bio)
             .WithCountry(accountDto.Country)

@@ -2,6 +2,25 @@ namespace BirdClone.Domain.Accounts;
 
 public class Account
 {
+    public override bool Equals(object obj)
+    {
+        if (obj == null || GetType() != obj.GetType())
+        {
+            return false;
+        }
+
+        Account other = (Account)obj;
+
+        return Id == other.Id &&
+               Bio == other.Bio &&
+               Country == other.Country &&
+               Email == other.Email &&
+               Password == other.Password &&
+               Username == other.Username &&
+               CreatedOn == other.CreatedOn &&
+               LastLogin == other.LastLogin &&
+               ProfilePicture == other.ProfilePicture;
+    }
 
     public int Id { get; private set; }
     public string Username { get; private set; }

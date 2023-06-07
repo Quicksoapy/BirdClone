@@ -15,9 +15,9 @@ public class AccountRepositoryTestFalse : IAccountRepository
         return;
     }
 
-    public Account GetAccountDataById(int userId)
+    public AccountDto GetAccountDataById(int userId)
     {
-        Account account = null;
+        var account = new AccountDto(1);
         return account;
     }
 

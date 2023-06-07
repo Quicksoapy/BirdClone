@@ -1,3 +1,5 @@
+using System.Security.Authentication;
+
 namespace BirdClone.Domain.Messages;
 
 public class MessageService
@@ -53,16 +55,17 @@ public class MessageService
             .WithUsername(message.Username)
             .WithContent(message.Content)
             .WithCreatedOn(message.CreatedOn);
-        
+
         if (_messageRepository.UserExist(message.UserId, message.Username) == false)
         {
-            return 0;
+            throw new InvalidCredentialException("User with that id and username not found.");
         }
 
         if (message.Content.Length > 500)
         {
-            return 0;
+            throw new ArgumentException("Message content is too long.");
         }
+        
         var response = _messageRepository.PostMessageHandler(messageDto);
         return response;
     }

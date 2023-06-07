@@ -9,7 +9,7 @@ public interface IAccountRepository
 
     void RegisterHandler(AccountDto accountDto);
 
-    Account GetAccountDataById(int userId);
+    AccountDto GetAccountDataById(int userId);
     void EditAccount(AccountDto account);
     bool AccountExist(AccountDto account);
 

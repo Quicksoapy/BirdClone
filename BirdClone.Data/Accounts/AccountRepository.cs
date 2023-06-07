@@ -56,9 +56,9 @@ public class AccountRepository : IAccountRepository
         Console.WriteLine(result);
     }
 
-    public Account GetAccountDataById(int userId)
+    public AccountDto GetAccountDataById(int userId)
     {
-        Account account = null;
+        AccountDto account = null;
         var conn = new NpgsqlConnection(_connectionString);
         conn.Open();
         
@@ -66,7 +66,7 @@ public class AccountRepository : IAccountRepository
         var dataReader = cmd.ExecuteReader();
         while (dataReader.Read())
         {
-            account = new Account(dataReader.GetInt32(dataReader.GetOrdinal("id")))
+            account = new AccountDto(dataReader.GetInt32(dataReader.GetOrdinal("id")))
                 .WithUsername(dataReader.GetString(dataReader.GetOrdinal("username")))
                 .WithEmail(dataReader.GetString(dataReader.GetOrdinal("email")))
                 .WithCountry(dataReader.GetString(dataReader.GetOrdinal("country")))
