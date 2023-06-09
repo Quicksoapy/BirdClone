@@ -27,7 +27,6 @@ public class Message
         Content = string.Empty;
         CreatedOn = DateTime.MinValue;
     }
-//TODO unit test those exceptions
     public Message WithUserId(int userId)
     {
         if (userId == 0)

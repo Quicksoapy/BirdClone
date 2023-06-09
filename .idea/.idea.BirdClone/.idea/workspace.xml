@@ -8,14 +8,12 @@
   <component name="ChangeListManager">
     <list default="true" id="67b38289-ceed-4ae7-bd5a-7fcc1a76f0ed" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BirdClone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Data/Accounts/AccountRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/Accounts/AccountRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/Accounts/Account.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/Accounts/Account.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/Accounts/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/Accounts/AccountService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/IAccountRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/IAccountRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone.Data/obj/Debug/net7.0/BirdClone.Data.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Data/obj/Debug/net7.0/BirdClone.Data.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone.Domain/Messages/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/Messages/Message.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.Domain/Messages/MessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Domain/Messages/MessageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.UnitTests/AccountRepositoryTestFalse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.UnitTests/AccountRepositoryTestFalse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BirdClone.UnitTests/AccountRepositoryTestTrue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.UnitTests/AccountRepositoryTestTrue.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BirdClone.UnitTests/AccountServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.UnitTests/AccountServiceTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone.UnitTests/MessageServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.UnitTests/MessageServiceTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.Web.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BirdClone.Web/obj/Debug/net7.0/BirdClone.Web.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,28 +53,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/maya/Downloads/BirdClone-2c46b5e29545a5405de1ac5ba8cce6ea826fce8b/BirdClone.sln",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/maya/Downloads/BirdClone-2c46b5e29545a5405de1ac5ba8cce6ea826fce8b/BirdClone.sln&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "rider.external.source.directories": [
-      "/home/maya/.config/JetBrains/Rider2023.1/resharper-host/DecompilerCache",
-      "/home/maya/.config/JetBrains/Rider2023.1/resharper-host/SourcesCache",
-      "/home/maya/.local/share/Symbols/src"
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/home/maya/.config/JetBrains/Rider2023.1/resharper-host/DecompilerCache&quot;,
+      &quot;/home/maya/.config/JetBrains/Rider2023.1/resharper-host/SourcesCache&quot;,
+      &quot;/home/maya/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BirdClone: https">
     <configuration name="BirdClone: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BirdClone.Web/BirdClone.Web.csproj" />
@@ -173,6 +171,7 @@
       <workItem from="1686037692066" duration="4421000" />
       <workItem from="1686125965031" duration="4154000" />
       <workItem from="1686155896214" duration="5089000" />
+      <workItem from="1686214523822" duration="2275000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1677487782844</created>

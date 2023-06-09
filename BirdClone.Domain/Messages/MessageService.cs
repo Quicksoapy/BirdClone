@@ -10,7 +10,7 @@ public class MessageService
     {
         _messageRepository = messageRepository;
     }
-    //TODO unit test these, utilize irepo that always returns true and false
+    
     public List<Message> GetMessagesByUserId(int userId)
     {
         IEnumerable<MessageDto> messageDtos = _messageRepository.GetMessagesOfUserById(userId);
